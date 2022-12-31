@@ -17,7 +17,7 @@
 > Because n is used to represent number of elements in input array, k is used to represent the
 > number of elements to be sliced here.
 
-# Data Structures
+## Data Structures
 
 Collection is a group of things. Every DS is an extension of collection.
 
@@ -25,20 +25,20 @@ Collection is a group of things. Every DS is an extension of collection.
 
 It is collection with order and no fixed length.
 
-Array
+### Array
 
 - It is a list in which every element has an index.
 - Fast to access element [O(1)]
 - Slow insertion and deletiion [O(n)]
 
-Linked List
+### Linked List
 
 - In general, an element in linked list contains value and reference of next element in list
 
 - Insertion and deletion is easy but getting position of element is hard. There is no info
   about previous element in list.
 
-Doubly Linked List
+### Doubly Linked List
 
 - Same as linked list except that each element contains value and of both next and previous elemets.
 - This makes it easy to traverse backwards
