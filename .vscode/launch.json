@@ -6,6 +6,13 @@
    "configurations": [
       {
          "type": "java",
+         "name": "Launch Main",
+         "request": "launch",
+         "mainClass": "Main",
+         "projectName": "90-days-DSA-Challange_75e20a60"
+      },
+      {
+         "type": "java",
          "name": "Launch Runner",
          "request": "launch",
          "mainClass": "Runner",
