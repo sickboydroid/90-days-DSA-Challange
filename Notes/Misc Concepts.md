@@ -9,18 +9,3 @@ int[] intersection = new int[2];
 intersection = Math.max(range1[0], range2[0]);
 intersection = Math.min(range1[1], range2[1]);
 ```
-
-## Holy For Loop
-
-```java
-// Both are equivalent
-for ( <initialization> ; <test> ; <increment> ) {
-     <body>
-}
-
-<initialization>
-while ( <test> ) {
-    <body>
-    <increment>
-}
-```

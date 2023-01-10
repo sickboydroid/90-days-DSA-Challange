@@ -33,3 +33,16 @@
 1. Learned about arrays and implemented DyanmicArray
 
 ### DAY ... (Going through breakup)
+
+WASTED ALL DAYS FROM JAN 03 TO JAN 10.
+REASON: Break up and Health
+
+### DAY - 5
+
+(I did some of the things during the above period)
+
+1. Learnt about stream api, java
+1. Watched DataStructure Video from CS50
+1. Watched LinkedList videos from various sources
+1. Solved few leetcode problems
+1. Implemented LinkedList in java
