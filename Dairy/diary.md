@@ -37,7 +37,16 @@ Thanks to **Fazil**, **Mushair**, and **Daniil** whole helped me to move on. Esp
 
 The bright side of this break up is that I will have extra time to focus on my hobbies. Also like my ex said, it was just a waste of time and we had no future together (it hurts but still if you think about it, it is not wrong...).
 
-So lets forget our past and think about future by focusing on present.
+**So lets forget our past and think about future by focusing on present.**
 
 Holy shit!! I just made it up...
 Byee!!
+
+## DAY 6 (11 JAN 2023)
+
+So today was another great day only because of [this](https://youtu.be/TXeHkfYyTPg) video 🤣.
+I gotta say that this video helped me to realise that she isn't special. Everyone thinks that their
+gf/ex was special and that nobody can understand their feelings. But the truth is that every girl
+is human and humans by nature have human behaivour. So no one speical except yourself.
+
+Coming back to coding, i will be noting the date of day as well from now on.

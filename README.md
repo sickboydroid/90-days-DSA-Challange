@@ -46,3 +46,8 @@ REASON: Break up and Health
 1. Watched LinkedList videos from various sources
 1. Solved few leetcode problems
 1. Implemented LinkedList in java
+
+### DAY - 6 (11 JAN 2023)
+
+1. Implemented SinglyLinkedList with and without tail
+1. Solved one leetcode problem
