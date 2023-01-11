@@ -1,5 +1,3 @@
-package Notes.dsa.ds;
-
 import java.util.Arrays;
 
 public class DynamicArray<E> {
