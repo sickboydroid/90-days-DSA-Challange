@@ -4,6 +4,7 @@
 
 - I created this repo on Dec 29 2022
 - This readme is a log. If you want to check diary then [click here](/Dairy/diary.md)
+- For Leetcode log [click here](/Dairy/LeetCode-Log.md)
 - Mardown reference: [Click here to go](https://github.com/DavidAnson/markdownlint/blob/v0.26.2/doc/Rules.md:q)
 
 ## DAY - 1
