@@ -91,3 +91,26 @@ public int mooreVotingAlgo(int[] arr) {
    return triangle;
  }
 ```
+
+## Reversing Singly Linked List
+
+- Reversing the next pointers
+- Every element points to its parent node
+
+**Approach 1:** Iterative:
+
+- Three pointers: prevNode, curNode and nextNode
+
+```java
+Node prevNode = null;
+Node curNode = head;
+Node nextNode = null;
+while(curNode != null) {
+   nextNode = curNode.next;
+   curNode.next = prevNode;
+   prevNode = curNode;
+   curNode = nextNode;
+}
+```
+
+**Approach 2:** Recursive:

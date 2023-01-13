@@ -51,3 +51,11 @@ REASON: Break up and Health
 
 1. Implemented SinglyLinkedList with and without tail
 1. Solved one leetcode problem
+
+### DAY - 7 (13 JAN 2023)
+
+1. Completed implementation of LinkedList
+1. Learned about reversing SinglyLinkedList
+1. Completed learning about Stacks
+1. Solved some leetcode problems
+1. Renamed repository

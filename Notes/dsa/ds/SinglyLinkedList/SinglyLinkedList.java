@@ -1,3 +1,5 @@
+package org.example;
+
 import java.security.InvalidParameterException;
 
 /**
@@ -18,6 +20,7 @@ import java.security.InvalidParameterException;
 public class SinglyLinkedList<T> {
 	private Node<T> head;
 	private Node<T> tail;
+	private int size;
 
 	/* TC: O(1) */
 	public void pushFront(T data) {
@@ -98,6 +101,118 @@ public class SinglyLinkedList<T> {
 		return false;
 	}
 
+	/* TC: O(n) */
+	public T valueAt(int index) {
+		if (head == null)
+			throw new RuntimeException(new NullPointerException("No element/node in list"));
+		if (index < 0)
+			throw new RuntimeException(new IllegalArgumentException("Index must be positive"));
+		return getNodeAt(index).data;
+	}
+
+	/* TC: O(n) */
+	public void insertAt(int index, T data) {
+		if (head == null && index != 0)
+			throw new RuntimeException(new NullPointerException("Cannot insert in empty list at " + index));
+		if (index < 0)
+			throw new RuntimeException(new IllegalArgumentException("Index must be positive"));
+		insertBefore(getNodeAt(index), data);
+	}
+
+	/* TC: O(n) */
+	public void remove(int index) {
+		if (head == null)
+			throw new RuntimeException(new IllegalStateException("Cannot remove node at " + index + " as list is empty"));
+		if (index < 0)
+			throw new RuntimeException(new IllegalArgumentException("Index must be positive"));
+		if (index == 0) { // need to remove head
+			if (head == tail) {
+				popFront();
+			}
+		}
+
+		Node<T> pre = getNodeAt(index - 1);
+		if (pre.next == null) // tail cannot be previous element
+			throw new RuntimeException(new IndexOutOfBoundsException());
+		else if (pre.next.next == null)
+			popBack();
+		else // removing normal element
+			pre.next = pre.next.next;
+	}
+
+	/*
+	 * TC: O(n)
+	 * Does not remove null values
+	 */
+	public boolean removeValue(T data) {
+		if (head == null || data == null)
+			return false;
+		if (head.data != null && head.data.equals(data)) { // head to be removed
+			popFront();
+			return true;
+		}
+		Node<T> preNode = head;
+		while (preNode.next != null) {
+			if (preNode.next.data != null && preNode.next.data.equals(data))
+				break;
+			preNode = preNode.next;
+		}
+		if (preNode.next == null) // tail cannot be prev node
+			return false;
+		if (preNode.next == tail) { // tail to be removed
+			popBack();
+			return true;
+		}
+		preNode.next = preNode.next.next;
+		return true;
+	}
+
+	private Node<T> getNodeAt(int index) {
+		Node<T> cur = head;
+		while (index > 0) {
+			cur = cur.next;
+			if (cur == null)
+				throw new RuntimeException(new IndexOutOfBoundsException());
+			index--;
+		}
+		return cur;
+	}
+
+	/* TC: O(n) */
+	public void reverse() {
+		if (head == tail || head == null)
+			return;
+		Node<T> pre = null;
+		Node<T> cur = head;
+		while (cur != null) {
+			Node<T> next = cur.next;
+			cur.next = pre;
+			pre = cur;
+			cur = next;
+		}
+
+		// manage head and tail pointers
+		Node<T> tmp = head;
+		head = tail;
+		head.next = tail.next;
+		tail = tmp;
+		tail.next = null;
+	}
+
+	public void reverseRecursively() {
+		Node<T> prevTail = tail;
+		tail = reverseRecursively(head);
+		head = prevTail;
+	}
+
+	private Node<T> reverseRecursively(Node<T> head) {
+		if (head == null || head.next == null)
+			return head;
+		reverseRecursively(head.next).next = head;
+		head.next = null; // for the last element
+		return head;
+	}
+
 	public boolean isEmpty() {
 		return head == null;
 	}
@@ -131,6 +246,17 @@ public class SinglyLinkedList<T> {
 		while (prevNode.next != node)
 			prevNode = prevNode.next;
 		insertAfter(prevNode, data);
+	}
+
+	/* TC: O(n) */
+	public int size() {
+		int size = 0;
+		Node<T> cur = head;
+		while (cur != null) {
+			cur = cur.next;
+			size++;
+		}
+		return size;
 	}
 
 	@Override

@@ -2,12 +2,12 @@
 
 ## 171. Linked List Cycle
 
-__Approach 1:__ Use HashMap
+**Approach 1:** Use HashMap
   
     - TC: O(n)
     - SC: O(n)
 
-__Approach 2:__ [Floyd's Cycle Detection Algorithm](https://youtu.be/jcZtMh_jov0)
+**Approach 2:** [Floyd's Cycle Detection Algorithm](https://youtu.be/jcZtMh_jov0)
     - Uses two pointers, slow and fast pointer
     - Slow steps one node at a time and Fast steps two nodes at a time
     - Case 1:
@@ -19,3 +19,9 @@ __Approach 2:__ [Floyd's Cycle Detection Algorithm](https://youtu.be/jcZtMh_jov0
     - Finding node where loop starts
       - TC: O()
       - SC: O(1)
+
+## [101. Symmetric Tree (Easy)](https://leetcode.com/problems/symmetric-tree/)
+
+**Approach 1:** Recursive
+
+**Apporach 2;** Iterative (TODO: I haven't implemented this one yet so implement it after learning about stacks and tree)

@@ -50,3 +50,20 @@ gf/ex was special and that nobody can understand their feelings. But the truth i
 is human and humans by nature have human behaivour. So no one speical except yourself.
 
 Coming back to coding, i will be noting the date of day as well from now on.
+
+## DAY 7 (13 JAN 2023)
+
+Again feeling sick (real sick) but I can handle it.
+So today I messaged her and apologised for the last time. I sent her a goodbye message and prayed for their good.
+She hasn't replied but who cares!!
+
+Coming back to coding again. Today I completed implementing LinkedList and also completed DoublyLinkedList.
+I also implemented stack. Now I am going to practice a bit on leetcode.
+From tomorrow I think I will only make digital notes of LinkedList and stack and practice some leetcode problems on them.
+It has snowed today. Daniil is not replying, I hope he is ok.
+I am going to get a marker tomorrow, white board days are back guys!!
+Also I am gonna rename this repo.
+I will name it may be **My DSA Journey (start date - end date)**.
+This repo will be the biggest thing I have created.
+
+Let's rock.
