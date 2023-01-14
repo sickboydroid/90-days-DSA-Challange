@@ -67,3 +67,20 @@ I will name it may be **My DSA Journey (start date - end date)**.
 This repo will be the biggest thing I have created.
 
 Let's rock.
+
+## DAY 8 (14 JAN 2023)
+
+I am feeling good now (physically) but emotionally I might need some more time.
+Today I got new half-gluose as it very cold here. Also i got whiteboard-markers.
+Today I completed Queue DS and also solved a problem on leetcode which was mixed problem
+on stack and queue.
+
+In my personal life I was quite busy today as I had to go to larkipora for gluose, markers, shoes (for mom)
+and adhar card of brother. I was thinking of recharging 3k but I dont have enough savings. Basically I spent
+most of it in books and buying things for Khadija which were of no use (f*k).
+
+IDK why but I am not able to start my formal studies which is pretty bad as my exams are in march.
+Also in order to get a good collage I need to prepare for JEE as well.
+Man!! I am so dumb. I got like 1 and a half year but still my syllabus is only about 70% done.
+
+I will for sure start my formal studies from tomorrow!!

@@ -62,3 +62,9 @@ REASON: Break up and Health
 1. Completed learning about Stacks
 1. Solved some leetcode problems
 1. Renamed repository
+
+## DAY 8 (14 JAN 2023)
+
+1. Learned about Queues.
+1. Implemeneted queue using both circular array and linked list
+1. Solved a leetcode question on queuse and stack
