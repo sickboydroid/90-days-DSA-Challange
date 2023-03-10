@@ -68,7 +68,7 @@ Videos:
 - IP is a very low level protocol.
 - There is only destination address in the packet's header. So computer on receiving packet will be unable to determine the receiving application
   - Packet's header is just the metadata stored in front of the payload
-![Internet Protocol](IP.png)
+![Internet Protocol](assets/IP.png)
 
 ## UDP
 
@@ -78,8 +78,8 @@ Videos:
   - CHECKSUM is the sum of data present in packet. It helps in detection of data loss
 - So IP gets the packet to right computer but UDP gets the packet to the right p>rogram running on that computer
 - UDP doesn't offer any mechanism to fix the data. It just alert the receiving program about it
-![UDP](UDP.png)
-![UDP Header](UDP_header.png)
+![UDP](assets/UDP.png)
+![UDP Header](assets/UDP_header.png)
 
 ## TCP
 
@@ -89,14 +89,14 @@ Videos:
   - When receiver receives the packet and verfies its checksum it needs to send an ACK or acknowledegement to sender.
   - If sender doesn't receive the ACK it resends the same packet
 
-![TCP Header Structure](TCP_header_structure.jpg)
+![TCP Header Structure](assets/TCP_header_structure.jpg)
 
 ## DNS Server
 
 - DNS (Domain Name System) is like spreadsheet that maps b/w domain names and their ip addresses
   - This mapping is stored in a tree data structure as follows
   
-![Domain Structure](DNS_structure.png)
+![Domain Structure](assets/DNS_structure.png)
 
 ## OSI Model
 
@@ -110,7 +110,7 @@ Layers Of The OSI Model:
 6. Presentation Layer: ...
 7. Application Layer: ...
 
-![OSI Model](OSI_model.png)
+![OSI Model](assets/OSI_model.png)
 
 ## WWW (World Wide Web)
 
