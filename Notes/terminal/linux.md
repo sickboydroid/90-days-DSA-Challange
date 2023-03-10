@@ -110,3 +110,16 @@ awk '/junaid/{++count} END {print "Count: ", count}' file
 # String cancatination
 awk 'BEGIN {str1="Hello"; str2=", "; str3=str1 str2 "World"; print str3}'
 ```
+
+## netcat/nc
+
+Switches:
+  - `-l`: Listen for incoming connections
+  - `-v`: Verbose
+  - `-p ####`: Port
+  - `-w SEC`: Timeout. IMP
+  - `-n`: Don't resolve. Provide IP instead of domain
+  - `-e STR`: Execute commands
+  - `-z`: Port scan
+
+1. Range of ports can also be used
