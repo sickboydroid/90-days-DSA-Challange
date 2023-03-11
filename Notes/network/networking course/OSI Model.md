@@ -1,53 +1,62 @@
 # OSI Model
 
+> [Click here](https://youtube.com/playlist?list=PLowKtXNTBypH19whXTVoG3oKSuOcw_XeW) to go the actual playlist of **Ben Eater**.
+> All of the notes are from his videos (including screenshots).
+> Thanks **Ben** for such a great content!
+
 - OSI model stands for Open System Inter-connection model
 
 ![OSI Model](assets/osi-model-7-layers.svg)
 
 ## Physical layer
 
-1. Ethernet cable has 4 pairs of wires (total 8 different wires). 1 bod = 1 symbol/sec. We send info over copper wire by varying volatages.
-   - 1 pair sends and other pair receives. Remaining two pairs are used rarely
-2. Fiber Optics works on the principle of total internal reflection. Here as well we can say 0 is light on and 1 is light off.
-3. Radio Waves can also be used for sending information. Shifting phases of waves can help in sending 0s and 1s.
+1. **Ethernet cable** has 4 pairs of wires (total 8 different wires)
+
+   - 1 bod = 1 symbol/sec.
+   - We send info over copper wire by varying volatages.
+
+2. **Fiber Optics** works on the principle of total internal reflection. Here as well we can say **0** is light on and **1** is light off.
+3. **Radio Waves** can also be used for sending information. Shifting phases of waves can help in sending 0s and 1s.
 
 ---
 
-1. Clock synchronization is very important while transferring data over a network
-2. Clock slip is the phenomenon when clocks are out of sync and we read some extra or some less bits which corrupt our message
-3. One way to sync clocks is using GPS. GPS's have atomic clocks which are pretty accurate.
-4. Second solution is to embed atomic clocks inside systems
-5. Other solution is to send a clock signal for syncing the clocks of sender and receiver
-6. In practice, we mix clock with data.
-    - For example if 0V was 0 and 5V was 1 before, now we are sayin that transition from 0V to 5V is 1 and transition from 5V to 0V is 0
-    - So even if the receivers clock isn't perfectly synced it can still read the incoming data properly
-   
- - It is called Manchester coding
-  
+1. **Clock synchronization** is very important while transferring data over a network
+2. **Clock slip** is the phenomenon when clocks are out of sync and we read some extra or some less bits which corrupt our message
+
+Ways to sync clocks:
+
+- Use GPS
+- Embed atomic clocks
+- Send a clock signal for syncing
+- In practice, we use **Manchester coding**:
+
+  - First sync clocks via signal
+  - Then use transitions instead of absolute values. For example if 0V was 0 and 5V was 1 before, now we are saying that transition from 0V to 5V is 1 and transition from 5V to 0V is 0
+  - So even if the receivers clock isn't perfectly synced it can still read the incoming data properly
+
 ---
 
 ## Data Link Layer
 
-### Point to Point data link
+### Point to Point Data Link
 
 Data is shared b/w two computers connected at the two ends of an ethernet cable or fibre optic cable.
 
-**How does the receiver know the byte boundry?**
-    *Framing* is the answer.
+**How does the receiver know the byte boundry?** *Framing* is the answer.
 
-#### HDLC framing format
+#### HDLC Framing Format
 
-In HDLC (High LEvel Data Link Control) protocol we use 0111110 as a flag to indicate that a new frame starts after it. So the receiver knows that the first byte starts after this flag
+In HDLC (High Level Data Link Control) protocol we use **0111110** as a flag to indicate that a new frame starts after it. So the receiver knows that the first byte starts after this flag
 
-If the data contains five 1's in consecutive, **bit stuffing** is performed. So in order to prevent the receiver from mistakingly mis-interpretting the data as flag, 0 is inserted after the four 1's and the receiver is said to ignore it
+If the actual data contains five 1's in consecutive, **bit stuffing** is performed. So in order to prevent the receiver from mistakingly mis-interpretting the data as flag, 0 is inserted after the four 1's and the receiver is expected to ignore it
 
-> Ethernet has different mecahnism. Inter-frame gap (IFG) is a gap when there is no data sent (0V) and then it sends **Preamble** which is a 56 bits long alternating 0's and 1's.
->    - Something like this -------------1010101010...101011
->    - The last 11 informs the receiver that after this 11 the upcoming bit is data
+> Ethernet has a different mechanism. **Inter-frame gap (IFG)** is a gap when there is no data sent (0V in case of wire) and then it sends **Preamble** which is a 56 bits long alternating 0's and 1's.
+    - Something like this: -------[IFG]--------1010101010...101011
+    - The last 11 informs the receiver that after this 11 the upcoming bit is data
+> Large frames mean efficiency but if receiver misreads some byte then it will misread everything after that until new frame starts.
+> Ethernet Frame sizes vary from **64-1500 bytes** usually.
 
-> Large frames mean efficiency but if receiver misreads some byte then it will misread everything after that until new frame starts. Ethernet Frame sizes vary from 64-1500 bytes usually.
-
-#### PPP framing format
+#### PPP (Point-to-Point) Framing Format
 
 PPP uses the same HDLC framing. There is flag byte (0111110) at the beginning.
 
@@ -57,24 +66,27 @@ Also control has no use and set to 0x03
 
 Protocol, Payload, and FCS  are equivalent to Ether Type, Payload and Frame Check Seq of ethernet
 
-![PPP format]
-
+<!-- TODO: Add image of PPP format -->
+![PPP format](assets/)
 
 ---
 
-### Multipoint/Broadcast data links
+### Multipoint/Broadcast Data Links
 
-##### Ethernet framing format for Multipoint data links
+#### Ethernet Framing Format for Multipoint Data Links
 
 For example multiple computers connected via radio waves or ethernet cable
 
-![Ethernet](assets/)
 
 - Ethernet/MAC addresses are builtin in all Ethernet interfaces
-- MAC address of receiving computer is what goes into Destination address and MAC address of sending computer is what goes into Source Address
-  - Setting destination address to all ones (or ff:ff:ff...:ff in hex) informs that it is for every computer
-- Ether Type gives us what type of data are we expecting in payload. In most cases it is going to be an IP packet.
-- Last 4 bytes consist of Frame Check seq. It is a number computed on the basis of everything the frame contains (from dest addr to payload). It lets the receiver know if there has been any corruption of data along the way.
+- **Source addr** and **Dest addr** hold MAC addr of sender and receiver respectively
+  - Setting destination address to ff:ff:ff...:ff in hex informs that it is a Broadcast i.e for every computer
+- **Ether Type** gives us what type of data are we expecting in **Payload**. In most cases it is going to be an IP packet.
+- Last 4 bytes consist of **Frame Check seq.** It is a number computed on the basis of everything the frame contains (from dest addr to payload). It lets the receiver know if there has been any corruption of data along the way.
+
+<!-- TOOD: Add image of ethernet -->
+
+![Ethernet](assets/)
 
 ---
 
@@ -82,30 +94,27 @@ For example multiple computers connected via radio waves or ethernet cable
 
 We cannot use a mac address over internet because sometimes the routers are linked via PPP LLC (Point to Point Logical Link Control) and as we know they don't use mac address.
 
-So to overcome this issue a standard protocol (set of rules) called IP came into existance
+So to overcome this issue a standard protocol (set of rules) called IP came into existance. Internet Protocol Address is a unique address given to every computer connected to the Internet.
 
-Internet Protocol Address is a unique address give to every assets/computer connected to the Internet.
-
-Routers receive packets at each of their interefaces and make a dicession of where to forward those packets.
-
-Every router has a forwarding table which tells the router where to forward a packet with pariticular IP addr
+Routers receive packets at each of their interefaces and make a dicession of where to forward those packets. Every router has a forwarding table which tells the router where to forward a packet with pariticular IP addr.
 
 The process of building that table is called **Routing** and the process of using this table to forward the packets is called **Forwarding**
 
-Instead of actual IP's, the router stores ranges of IP's to improve effeciency.
-  - e.g: Let's say 172.17 / 16 is prefix and we have programmed the router to forward any packet with first 16 bits as 172.17 to interface 
-  - So when it sees 172.17.6.2 IP addr on a packet it sends it through interface 2.
+Instead of actual IP's, the router stores ranges of IP's to improve effeciency. For example
+
+    - There is something like 172.8 / 16 > 88.112.32.2 (Kashmir) in routing table
+    - This means that if dest ip addr of packet's first 16 bits match to 172.8 then forward it to Kashmir router with IP 88.112.32.2
 
 ![IP addr and routing](assets/IP%20addr%20and%20Routing.png)
 
-
 ## Mapping IP and Ethernet (ARP)
 
-- When we send a packet a computer which is not on the same LAN we send it to the local router with the IP addr of the receiving computer.
-  - Dest Mac addr is Routers addr
-  - Src Mac addr is Senders addr
-  - Dest IP addr is receivers addr
-  - Source IP addr is sender ip addr
+When we want to send a packet to a computer which is not on the same LAN, we send it to the local router with the IP addr of the receiving computer.
+
+    - Dest Mac addr is Routers addr
+    - Src Mac addr is Senders addr
+    - Dest IP addr is receivers addr
+    - Source IP addr is sender ip addr
 
 ---
 
@@ -119,15 +128,16 @@ For this request we use `ARP (Address Resolution Protocol)` (code 0806). So the 
 > ARP is the protocol that lets us do mapping b/w addr (mostly IP addr) and hardware addr (mostly MAC addr)
 
 First four slots are almost always by the same values.
+
   1. **HW Addr Type**: Which hardware addr are you req? MAC addr
-  1. **Protocol Addr Type**: Which protocol addr are you req? IP addr
-  1. **HW Address Len**: Length HW addr
-  1. **Protocol addr Len**: Length of protocol addr
-  1. **OP Code**: Which operation? 1 for req and 2 for ans
-  1. **Hardware Addr of sender**: Mac addr of req
-  1. **Protocol Addr of sender**: IP addr of sender
-  1. **Hardware Addr of Target**: 000000000 (as it is request)
-  1. **Protocol addr of Target**: IP addr of router
+  2. **Protocol Addr Type**: Which protocol addr are you req? IP addr
+  3. **HW Address Len**: Length HW addr
+  4. **Protocol addr Len**: Length of protocol addr
+  5. **OP Code**: Which operation? 1 for req and 2 for ans
+  6. **Hardware Addr of sender**: Mac addr of req
+  7. **Protocol Addr of sender**: IP addr of sender
+  8. **Hardware Addr of Target**: 000000000 (as it is request)
+  9. **Protocol addr of Target**: IP addr of router
 
 Respond of router is also a ARP answer with its MAC addr as HW addr
 
