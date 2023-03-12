@@ -1,5 +1,11 @@
 # Leetcode Log
 
+- Link to problem
+- Problems you faced while solving
+- No code (except when it is not on leetcode or is very important)
+- New things you learnt
+- Time and space complexity
+
 ## 171. Linked List Cycle
 
 **Approach 1:** Use HashMap
