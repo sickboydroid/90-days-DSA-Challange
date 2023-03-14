@@ -9,3 +9,11 @@ int[] intersection = new int[2];
 intersection = Math.max(range1[0], range2[0]);
 intersection = Math.min(range1[1], range2[1]);
 ```
+
+## UNICODE
+
+- Java uses **unicode** character set
+- *[65-90]* -> **A-Z**
+- *[97-122]* -> **a-z**
+- To convert lowercase char to uppercase, sub 32
+- To convert uppercase chat to lowercase, add 32

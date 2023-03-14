@@ -1,5 +1,40 @@
 # Java
 
+## Misc
+
+1. String:
+   - `indexOf(target, start)`, starts search from start and if not found returns -1
+2. Math:
+   - `log(num)`, base e
+3. The operators **&**, **|**, and **^** are *bitwise logical operations* for integer types that do **and**, **or**, and **exclusive or** (respectively) on each bit position.
+   - xor operator is false only when both are true
+   - **~** is bitwise negation. Flips every bit
+4. Java [String Formatting](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax) `%[argument_index$][flags][width][.precision]conversion`
+   - Conversion:
+     - d -> integral
+     - f -> floating point
+     - s -> general
+     - t/T -> data/time
+5. Ambigious if:
+
+```java
+if <expr1> if <expr2> <stmntA> else <stmntB>
+// it is equivalent to
+if <expr1> { if <expr2> <stmntA> else <stmntB> }
+```
+
+## Overflow and Underflow
+
+- Overflow: Abs value is too big for data type
+- Underflow: Very very small abs value
+- Integer-wraparound:
+  - Integer.MAX_VALUE + 1 = Integer.MIN_VALUE
+  - Integer.MIN_VALUE - 1 = Integer.MAX_VALUE
+- No exception thrown on under/overflow
+- 1/0 is undefined by 1.0/0.0 is infinity
+- **%** is remainder operator. Gives the remainder you will get on paper
+- **modulo** is another operation. Euclidien division
+
 ## Java For Loop
 
 ```java
@@ -101,3 +136,14 @@ nums.stream()
 int sum = nums.stream()
    .reduce(0, (carry, element) -> carry + element)
 ```
+
+## Type Conversion
+
+1. **Widening or automatic conversion**:
+
+![Widening](../dsa/assets/Widening-or-Automatic-Type-Conversion.png)
+
+2. **Narrowing or explicit conversion**: reverse order of above image
+3. **Type Promotion in Expressions**: While evaluating expressions, the intermediate value may exceed the range of operands and hence the expression value will be promoted. Some conditions for type promotion are:
+   1. Java automatically promotes each byte, short, or char operand to int when evaluating an expression.
+   2. If one operand is long, float or double the whole expression is promoted to long, float, or double respectively.

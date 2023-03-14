@@ -114,3 +114,16 @@ while(curNode != null) {
 ```
 
 **Approach 2:** Recursive:
+
+## Num to Binary String
+
+- Divide by 2 and write remainder in each step
+- Reverse remainders to get binary
+
+```java
+public static String toBinary(int num) {
+   if(num == 1 || num == 0)
+         return "" + num;
+   return toBinary(num/2) + (num%2);
+}
+```
