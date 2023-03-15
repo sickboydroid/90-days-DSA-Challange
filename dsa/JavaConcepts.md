@@ -4,18 +4,13 @@
 
 1. String:
    - `indexOf(target, start)`, starts search from start and if not found returns -1
+   - If one arg of *+* is string only then is other arg converted to string
 2. Math:
    - `log(num)`, base e
 3. The operators **&**, **|**, and **^** are *bitwise logical operations* for integer types that do **and**, **or**, and **exclusive or** (respectively) on each bit position.
    - xor operator is false only when both are true
    - **~** is bitwise negation. Flips every bit
-4. Java [String Formatting](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax) `%[argument_index$][flags][width][.precision]conversion`
-   - Conversion:
-     - d -> integral
-     - f -> floating point
-     - s -> general
-     - t/T -> data/time
-5. Ambigious if:
+4. Ambiguous if:
 
 ```java
 if <expr1> if <expr2> <stmntA> else <stmntB>
@@ -50,15 +45,15 @@ while ( <test> ) {
 }
 ```
 
-## Lamda expression
+## Lambda expression
 
 - Interfaces defines behaivour
 - Types of interface:
-  - __Marker Interface__: No abstract methods
-  - __Functional Interface__: One method (before 1.8 SAM)
-  - __Normal Interface__: > One Method
+  - **Marker Interface**: No abstract methods
+  - **Functional Interface**: One method (before 1.8 SAM)
+  - **Normal Interface**: > One Method
 
-Lamda Expression
+Lambda Expression
  : When you create implementation of a Functional interface you can use lamda expression
 
 ```java
@@ -78,7 +73,7 @@ con.accept("Do something with value");
 - In Collections
 - for loop uses index and enhanced for loop uses iterator are both external loop
 - For each method is an internal loop
-- Recenives an object of Consumer functional interface
+- Receives an object of Consumer functional interface
   - Consumer has a generic method accept(T t)
 
 ```java
@@ -116,10 +111,10 @@ nums.forEach(cons);
 - reduce(): reduces stream
 
 > Predicate\<T\>
-> It is a functional interface with mehtod: boolean test(T t);
+> It is a functional interface with method: boolean test(T t);
 > In theory, it can be used to validate objects as in Stream.filter(...)
 
-We are only replacing values and not creating dublicates below
+We are only replacing values and not creating duplicates below
 
 ```java
 // Creates new stream -> filters only odd nums -> sorts filtered values -> squares the elements and then prints them
@@ -147,3 +142,14 @@ int sum = nums.stream()
 3. **Type Promotion in Expressions**: While evaluating expressions, the intermediate value may exceed the range of operands and hence the expression value will be promoted. Some conditions for type promotion are:
    1. Java automatically promotes each byte, short, or char operand to int when evaluating an expression.
    2. If one operand is long, float or double the whole expression is promoted to long, float, or double respectively.
+
+## Formatted string
+
+- Java [String Formatting](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax) `%[argument_index$][flags][width][.precision]conversion`
+  - Conversion:
+    - d -> integral
+    - f -> floating point
+    - s -> general
+    - t/T -> data/time
+- **Width**: If output str has len > width then width is ignored. Otherwise space is added to left (or right if width is negative) to match the str len to width
+- **Precision**: Num of decimal places or Num of string characters

@@ -59,5 +59,9 @@ REASON: Break up and Health
 ## DAY 8 (14 JAN 2023)
 
 1. Learned about Queues.
-1. Implemeneted queue using both circular array and linked list
-1. Solved a leetcode question on queuse and stack
+1. Implemented queue using both circular array and linked list
+1. Solved a leetcode question on queues and stack
+
+## DAY 9 (15 MAR 2023)
+
+1. Am I back again??
