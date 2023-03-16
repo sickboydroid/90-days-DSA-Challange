@@ -29,4 +29,5 @@ public static int binarySearch(int key, int[] input) {
 }
 ```
 
-Use lo + (hi-lo)/2 instead of (hi + lo)/2 to prevent integer overflow 
+- Use lo + (hi-lo)/2 instead of (hi + lo)/2 to prevent integer overflow 
+- Slight modification (combine two conditions and return low/high) can allow you find number of values less or greater than the key even if it is not present
