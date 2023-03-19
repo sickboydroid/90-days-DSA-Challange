@@ -198,3 +198,8 @@ Comparing doubles till 3 decimal places. Thus, 1.123 = 1.1234 = 1.12349 != 1.124
 BigDecimal d1 = BigDecimal.valueOf(1.123433333).setScale(3, RoundingMode.FLOOR);
 BigDecimal d2 = BigDecimal.valueOf(1.12399999).setScale(3, RoundingMode.FLOOR);
 ```
+
+## Tips
+
+- Size of interval with i and j as starting and ending indices is **j-i+1**
+- 

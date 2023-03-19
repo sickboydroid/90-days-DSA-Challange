@@ -31,3 +31,9 @@
 **Approach 1:** Recursive
 
 **Apporach 2;** Iterative (TODO: I haven't implemented this one yet so implement it after learning about stacks and tree)
+
+## [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/)
+
+- **digitChar - '0' = digitInt**
+- Even if you don't remember ascii code, use above trick
+  - is char an int? char >= '0' && char <= '9'
