@@ -6,6 +6,17 @@
 - New things you learnt
 - Time and space complexity
 
+## Contents
+
+- [Leetcode Log](#leetcode-log)
+  - [Contents](#contents)
+  - [171. Linked List Cycle](#171-linked-list-cycle)
+  - [101. Symmetric Tree (Easy)](#101-symmetric-tree-easy)
+  - [8. String to Integer (atoi)](#8-string-to-integer-atoi)
+  - [19. Remove Nth Node From End of List](#19-remove-nth-node-from-end-of-list)
+  - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
+  - [7. Reverse Integer](#7-reverse-integer)
+
 ## 171. Linked List Cycle
 
 **Approach 1:** Use HashMap
@@ -37,3 +48,30 @@
 - **digitChar - '0' = digitInt**
 - Even if you don't remember ascii code, use above trick
   - is char an int? char >= '0' && char <= '9'
+
+## [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
+
+- Slow and fast pointer
+- dummy head keeps pointer n + *1* steps ahead of slow pointer
+
+## [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
+- Sliding window technique
+
+## [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/description/)
+
+- Prevent Overflow and Underflow
+- Learned a lot about checking overflow and underflow
+
+```java
+
+// Lets say you want to do y = y * 10 + digit. Below code will check if integer over/underflow will happen
+// underflow
+if(y > Integer.MAX_VALUE / 10 || (y == Integer.MAX_VALUE && digit > Integer.MAX_VALUE % 10))
+    return 0;
+
+// overflow
+if(y < Integer.MIN_VALUE / 10 || (y == Integer.MIN_VALUE && digit < Integer.MIN_VALUE % 10))
+    return 0;
+
+```

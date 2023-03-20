@@ -1,10 +1,37 @@
 # Fundamentals
 
+## Contents
+
+- [Fundamentals](#fundamentals)
+  - [Contents](#contents)
+  - [Misc](#misc)
+  - [Operators](#operators)
+  - [Primitive data types](#primitive-data-types)
+  - [Java API](#java-api)
+  - [Overflow and Underflow](#overflow-and-underflow)
+  - [Java For Loop](#java-for-loop)
+  - [Type Conversion](#type-conversion)
+  - [Formatted string](#formatted-string)
+    - [Formatting Syntax](#formatting-syntax)
+    - [Conversion Characters](#conversion-characters)
+  - [Methods and Functions](#methods-and-functions)
+  - [Recursion](#recursion)
+  - [Redirection and Piping](#redirection-and-piping)
+    - [Redirection](#redirection)
+    - [Piping](#piping)
+  - [Proof by Mathematical Induction](#proof-by-mathematical-induction)
+  - [DP](#dp)
+    - [Memoization](#memoization)
+    - [Bottom-up approach](#bottom-up-approach)
+  - [Comparing doubles](#comparing-doubles)
+  - [Tips](#tips)
+
+
 ## Misc
 
-- Blue: Important, learnt something new
-- Red: Rewise couldn't understand or solve
-- Underline: Mark for something
+- *Blue/Green*: Revise, important, learnt something new
+- *Red*:  Couldn't understand or solve
+- *Underline*: Mark for something
 
 ---
 
@@ -13,8 +40,8 @@
 ## Operators
 
 - Order of operation (Prefer parenthesis):
-  1. \*  / ( % ) have priority over + -
-  2. **()** > **!** > **&&** > **||** (priority order)
+  1. *\\* *\**  */* *\(* *%* *\)* have priority over *+* *-*
+  2. **()** *>* **!** *>* **&&** *>* **||** (priority order)
   3. left to right associativity except for `=` and `->`
 - The operators **&**, **|**, and **^** are *bitwise logical operations* for integer types that do **and**, **or**, and **exclusive or** (respectively) on each bit position.
   - xor operator is false only when both bits are true
@@ -53,6 +80,7 @@
 - `1/0` is undefined, but `1.0/0.0` is infinity.
 - `%` is the remainder operator, which gives the remainder you will get on paper.
 - Modulo is another operation, which performs Euclidean division.
+
 ## Java For Loop
 
 ```java
@@ -167,6 +195,8 @@ String.format("%tB %<te, %<tY", new Date());
 
 ## DP
 
+Dynamic programming is a technique for solving problems by breaking them down into smaller subproblems and storing the solutions to those subproblems so that they can be reused later
+
 Three steps:
 
    1. **Recursion:** Solve with recursion
@@ -177,11 +207,29 @@ DP -> Recursion + Memo + Guessing
 
 ### Memoization
 
-1. Create empty arr
-2. Is value in arr? return it
-3. Calculate value
-4. Store in memo
-5. return value
+- Conversion of any **recursive function** into **memoized recursive function**
+
+```java
+// recursive function
+function(a, b, c) {
+    ...recursion and
+    ...some other stuff
+    return ans
+}
+```
+
+```java
+// memoized recursive function
+memo = {}
+function(a, b, c) {
+    if((a,b,c) in map)
+        return memo[a,b,c]
+    ...recursion and
+    ...some other stuff
+    memo[a,b,c] = ans
+    return ans
+}
+```
 
 > time = sub-problems * (time/subproblem)
 > Don't count memoized recursive calls
@@ -189,6 +237,29 @@ DP -> Recursion + Memo + Guessing
 ### Bottom-up approach
 
 Same computation as memoization but no recursion -> no stackoverflow exception
+
+```java
+// recursive function
+public static int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n-1) + fib(n-2);
+}
+
+```
+
+```java
+// bottom-up approach
+public static int fib(int n) {
+    if (n <= 1) return n;
+    int[] dp = new int[n+1];
+    dp[0] = 0;
+    dp[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[n];
+}
+```
 
 ## Comparing doubles
 
@@ -202,4 +273,4 @@ BigDecimal d2 = BigDecimal.valueOf(1.12399999).setScale(3, RoundingMode.FLOOR);
 ## Tips
 
 - Size of interval with i and j as starting and ending indices is **j-i+1**
-- 
+- **i < len - k** we are skipping last **k - 1** values
