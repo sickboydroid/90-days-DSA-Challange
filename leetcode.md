@@ -16,6 +16,11 @@
   - [19. Remove Nth Node From End of List](#19-remove-nth-node-from-end-of-list)
   - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
   - [7. Reverse Integer](#7-reverse-integer)
+  - [54. Spiral Matrix](#54-spiral-matrix)
+  - [1706. Where Will the Ball Fall](#1706-where-will-the-ball-fall)
+  - [33. Search in Rotated Sorted Array](#33-search-in-rotated-sorted-array)
+  - [34. Find First and Last Position of Element in Sorted Array](#34-find-first-and-last-position-of-element-in-sorted-array)
+  - [43. Multiply Strings](#43-multiply-strings)
 
 ## 171. Linked List Cycle
 
@@ -75,3 +80,57 @@ if(y < Integer.MIN_VALUE / 10 || (y == Integer.MIN_VALUE && digit < Integer.MIN_
     return 0;
 
 ```
+
+## [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/)
+
+- Simulation is the key
+- Left, right, top and bottom boundaries
+- keep right and bottom exclusive for clean code
+
+## [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description)
+
+- Use dfs. Fancy name but i implemented it without even knowing about it
+- Use row, col instead of x,y when dealing with 2d-arrays
+
+## [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+
+- NIGHTMARE. Revise it without any excuse
+- Don't try to find the pivot. It is possible but lots of edge cases
+- Use modified binary search (kind of)
+
+## [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
+
+- ALWAYS REMEMBER, in binary search:
+  - nums[lo] <= target <= nums[hi]
+  - And all values outside this range ARE NOT TARGET
+
+- Another method: Biased binary search was great
+
+```java
+// if left bias is true then it will return left most index of target
+public int binarySearch(int[] nums, int target, boolean leftBias) {
+    int lo = 0;
+    int hi = nums.length - 1;
+    int targetBiasedIndex = -1;
+    while(lo <= hi) {
+        int mid = lo + (hi - lo)/2;
+        if(target < nums[mid])
+            hi = mid - 1;
+        else if(target > nums[mid])
+            lo = mid + 1;
+        else {
+            targetBiasedIndex = mid;
+            if(leftBias)
+                hi = mid - 1;
+            else
+                lo = mid + 1;
+        }
+    }
+    return targetBiasedIndex;
+}
+```
+
+## [43. Multiply Strings](https://leetcode.com/problems/multiply-strings/submissions)
+
+- Importance of using `StringBuilder` instead of concatenation in loops. **beats 30% -> beats 90%**
+- Use `new BigInteger("123221312312412").toString(2)` to convert large numbers to any base
