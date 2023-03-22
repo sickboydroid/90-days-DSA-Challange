@@ -20,9 +20,6 @@
     - [Redirection](#redirection)
     - [Piping](#piping)
   - [Proof by Mathematical Induction](#proof-by-mathematical-induction)
-  - [DP](#dp)
-    - [Memoization](#memoization)
-    - [Bottom-up approach](#bottom-up-approach)
   - [Comparing doubles](#comparing-doubles)
   - [Tips](#tips)
 
@@ -192,74 +189,6 @@ String.format("%tB %<te, %<tY", new Date());
 
 > You proved it! How? You proved in `step3` that if you f(k) is true then f(k+1) has to be true. In `step1` you proved that it is true for f(1).
 > Therefore it has to be true for f(2) as from `step3`. Similarly it has to be true for f(3) as it is true for f(2) and so on
-
-## DP
-
-Dynamic programming is a technique for solving problems by breaking them down into smaller subproblems and storing the solutions to those subproblems so that they can be reused later
-
-Three steps:
-
-   1. **Recursion:** Solve with recursion
-   2. **Memoization:** Store values if too much recursion
-   3. **Bottom-up:** Remove recursion
-
-DP -> Recursion + Memo + Guessing
-
-### Memoization
-
-- Conversion of any **recursive function** into **memoized recursive function**
-
-```java
-// recursive function
-function(a, b, c) {
-    ...recursion and
-    ...some other stuff
-    return ans
-}
-```
-
-```java
-// memoized recursive function
-memo = {}
-function(a, b, c) {
-    if((a,b,c) in map)
-        return memo[a,b,c]
-    ...recursion and
-    ...some other stuff
-    memo[a,b,c] = ans
-    return ans
-}
-```
-
-> time = sub-problems * (time/subproblem)
-> Don't count memoized recursive calls
-
-### Bottom-up approach
-
-Same computation as memoization but no recursion -> no stackoverflow exception
-
-```java
-// recursive function
-public static int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-
-```
-
-```java
-// bottom-up approach
-public static int fib(int n) {
-    if (n <= 1) return n;
-    int[] dp = new int[n+1];
-    dp[0] = 0;
-    dp[1] = 1;
-    for (int i = 2; i <= n; i++) {
-        dp[i] = dp[i-1] + dp[i-2];
-    }
-    return dp[n];
-}
-```
 
 ## Comparing doubles
 

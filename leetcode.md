@@ -6,6 +6,10 @@
 - New things you learnt
 - Time and space complexity
 
+Tips:
+
+1. Whenever creating if-else or for-while, start with `{}` (typing++)
+
 ## Contents
 
 - [Leetcode Log](#leetcode-log)
@@ -21,6 +25,9 @@
   - [33. Search in Rotated Sorted Array](#33-search-in-rotated-sorted-array)
   - [34. Find First and Last Position of Element in Sorted Array](#34-find-first-and-last-position-of-element-in-sorted-array)
   - [43. Multiply Strings](#43-multiply-strings)
+  - [39. Combination Sum](#39-combination-sum)
+  - [37. Sudoku Solver](#37-sudoku-solver)
+  - [2220. Minimum Bit Flips to Convert Number](#2220-minimum-bit-flips-to-convert-number)
 
 ## 171. Linked List Cycle
 
@@ -134,3 +141,40 @@ public int binarySearch(int[] nums, int target, boolean leftBias) {
 
 - Importance of using `StringBuilder` instead of concatenation in loops. **beats 30% -> beats 90%**
 - Use `new BigInteger("123221312312412").toString(2)` to convert large numbers to any base
+
+## [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+
+- REVISE
+- It is so confusing
+
+## [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
+
+- Phew! I will take credit for solving at first try however i took some help from IDE and chatGPT
+- Finding grid (3x3) of cell.
+  - row = 3 * (rowCell/3)
+  - col = 3 * (colCell/3)
+  - It works because dividing rowCell by 3 will give us 0, 1 and 2 i.e either first 3 or 2nd 3 or 3rd 3 are the possible grids
+    - Multiplying it by 3 will give the row of the first cells of these grids
+  - Same for second 
+
+## [2220. Minimum Bit Flips to Convert Number](https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/)
+
+- Use bit wise manipulation
+- Approach 1: Uses constant time. Basically we run a loop 32 times and check if the two bits are different
+- Approach 2: Uses constant time. But we run loop on exactly that number of time as the number of set bits in `a^b`
+
+```java
+public int minBitFlips(int start, int goal) {
+    int diff = (start ^ goal); // diff will have those bits set which are different
+    // n & (n-1) sets the last least sig "set" bit to 0
+    // 001101 & 001100 => 001100
+    // 100000 & 011111 => 000000
+    // e.g 1101 -> 1100 -> 1000 -> 0000
+    int count = 0;
+    while(diff != 0) {
+        diff = diff & (diff - 1);
+        count++;
+    }
+    return count;
+}
+```
