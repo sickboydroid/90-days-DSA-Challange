@@ -14,8 +14,8 @@ Tips:
 
 - [Leetcode Log](#leetcode-log)
   - [Contents](#contents)
-  - [171. Linked List Cycle](#171-linked-list-cycle)
-  - [101. Symmetric Tree (Easy)](#101-symmetric-tree-easy)
+  - [Worthy mentions (not from leetcode)](#worthy-mentions-not-from-leetcode)
+    - [Single non-repeating element in array](#single-non-repeating-element-in-array)
   - [8. String to Integer (atoi)](#8-string-to-integer-atoi)
   - [19. Remove Nth Node From End of List](#19-remove-nth-node-from-end-of-list)
   - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
@@ -28,32 +28,46 @@ Tips:
   - [39. Combination Sum](#39-combination-sum)
   - [37. Sudoku Solver](#37-sudoku-solver)
   - [2220. Minimum Bit Flips to Convert Number](#2220-minimum-bit-flips-to-convert-number)
+  - [40. Combination Sum II](#40-combination-sum-ii)
 
-## 171. Linked List Cycle
+## Worthy mentions (not from leetcode)
 
-**Approach 1:** Use HashMap
-  
-    - TC: O(n)
-    - SC: O(n)
+### Single non-repeating element in array
 
-**Approach 2:** [Floyd's Cycle Detection Algorithm](https://youtu.be/jcZtMh_jov0)
-    - Uses two pointers, slow and fast pointer
-    - Slow steps one node at a time and Fast steps two nodes at a time
-    - Case 1:
-      - If there is a loop then the fast pointer gets trapped in it
-      - Slowly the slow pointer also reaches it and both stay in loop.
-      - At some point both pointers point to the same node and thus we found the loop
-    - Case 2:
-      - If there is no loop then fast pointer reaches the end and we return
-    - Finding node where loop starts
-      - TC: O()
-      - SC: O(1)
+Given an array with every element repeating exactly twice except one. Find that non-repeating element
 
-## [101. Symmetric Tree (Easy)](https://leetcode.com/problems/symmetric-tree/)
+0 < arr[i] < 10^4
 
-**Approach 1:** Recursive
+Return the element
 
-**Apporach 2;** Iterative (TODO: I haven't implemented this one yet so implement it after learning about stacks and tree)
+```java
+public int find(int[] arr) {
+    int target = 0;
+    for(int element : arr)
+        target ^= element;
+}
+```
+
+Logic: a^b^c^a^b is equal to c because XOR of same number gives zero and XOR of any number with zero gives back that number
+
+Single non-repeating element in array
+
+Given an array with every element repeating exactly three times except one.  Find that non-repeating element.
+
+This element occurs exactly once
+
+0 < arr[i] < 10^4
+
+Return the element
+
+```java
+/*
+* Generate bits arr of length 32
+* For each number increment the bits[i] for every ith set bit of number
+* At end see where the bits are 3n + 1 i.e not multiple of 3
+* Generate your number from them
+*/
+```
 
 ## [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/)
 
@@ -176,5 +190,53 @@ public int minBitFlips(int start, int goal) {
         count++;
     }
     return count;
+}
+```
+
+## [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+
+- Duplicate lists is the main problem
+- Think of it this way,
+  1. Sort the given candidates array, e.g [1 1 1 2 3 3]
+  2. In your list, Isn't picking 1 at 0th index either from 0 1 or 2 equivalent?
+     - All will give you give sublist `[1] [1] [1]`. So pick only one and skip the rest.
+     - In next method call, we will be picking 1th index. Then again we will include only one 1 to get `[11]` and not `[11][11]`
+
+> In nutshell, when we are excluding an element, we are excluding all of its copies. However, when we are including it, we do so normally.
+
+```java
+class Solution {
+    List<List<Integer>> res;
+    int[] candidates;
+    int target;
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates); // sort to group duplicates
+        res = new ArrayList<>();
+        this.candidates = candidates;
+        this.target = target;
+        solve(0, new ArrayList<>(), 0);
+        return res;
+    }
+
+    public void solve(int index, ArrayList<Integer> cur, int curSum) {
+        if(curSum == target) {
+            res.add(new ArrayList<Integer>(cur));
+            return;
+        }
+
+        if(curSum > target || index == candidates.length)
+            return;
+
+        cur.add(candidates[index]);
+        solve(index + 1, cur, curSum + candidates[index]); // include current element
+        cur.remove(cur.size() - 1); // backtrack
+
+        // skip duplicates. From the example, if you did not skip the duplicates,
+        // we will call solve with solve(1, [], 0) and solve will do the same exact thing
+        // as we did few lines above. Which will ultimately give duplicate solutions
+        while(index + 1 < candidates.length && candidates[index] == candidates[index + 1])
+            index++;        
+        solve(index + 1, cur, curSum); // exclude
+    }
 }
 ```

@@ -96,15 +96,20 @@ Three steps:
 
 DP -> Recursion + Memo + Guessing
 
+> TIP: First make a working solution using **pure recursion** then make it efficient using **memoization**
+
 ### Memoization
 
 - Conversion of any **recursive function** into **memoized recursive function**
+  - Check if args in memo. Return if present
+  - Save return value
+- MISTAKE: Don't check cache for the recursive calls you are gonna make in case your functions args were not cached.
+  - They will handle themselves as well
 
 ```java
 // recursive function
 function(a, b, c) {
-    ...recursion and
-    ...some other stuff
+    ...
     return ans
 }
 ```
@@ -115,8 +120,7 @@ memo = {}
 function(a, b, c) {
     if((a,b,c) in map)
         return memo[a,b,c]
-    ...recursion and
-    ...some other stuff
+    ...
     memo[a,b,c] = ans
     return ans
 }
@@ -124,6 +128,12 @@ function(a, b, c) {
 
 > time = sub-problems * (time/subproblem)
 > Don't count memoized recursive calls
+
+Memoization recipe:
+    1. Make it work
+       1. Visualize problem as a tree (break large problem into smaller ones)
+         - Tree nodes represent input and line may be output
+         -   
 
 ### Bottom-up approach
 

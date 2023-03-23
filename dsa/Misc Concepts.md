@@ -42,14 +42,19 @@ boolean isEven = (x&1 == 0)
 - Clearing *i*th bit.
   1. `(x& ~(1<<i));` Will clear the *i*th (will be set to 0)
 - `XOR` or `^` or `Exclusive OR operator`
-  - Exclusively one of the operands is true OR
-  - `!=` operator OR
-  - If one operand is exactly one operand is true
-  - One of its applications is that it can be used to find how many bits are different b/w two numbers *(See leetcode problem 2220)*
+  - Def:
+    1. Exclusively one of the operands is true OR
+    2. `!=` operator OR
+    3. If one operand is exactly one operand is true
+  - Applications and properties:
+    1. One of its applications is that it can be used to find how many bits are different b/w two numbers *(See leetcode problem 2220)*
+    2. `x^x` is zero.
+    3. `x^0` is x.
 - In java, we have `Airthmetic right/left shift` and not `Logical right/left shift`
 
 > TIP: Determine mask first and then operator or vise versa. Don't calculate both at same time
-
+---
 > TIP: Number of bits required to represent a decimal number in binary is: **ceil(log2 n)**
-
+---
 > TIP: Number of digits required to represent a binary number in decimal is: **ceil(log10 n)** 
+---

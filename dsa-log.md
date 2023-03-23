@@ -1,5 +1,14 @@
 # DSA Log
 
+## DAY 11 (23 MAR 2023)
+
+1. Phew! Ramadan has started. There are still more than hours left for iftar and I have already started to feel dizzy 
+2. Learning about Dynamic Programming
+3. However from past few days I haven't read that many pages of Algorithms Book.
+   1. I found that the concepts and questions present in the book really help in DSA
+4. I am having problems with graph questions of leetcode. But I am currently focusing more on DP.
+5. IDK why but from last night I am missing my ex so much. Mainly because we used talk after sehri last year.
+
 ## DAY 10 (21 MAR 2023)
 
 1. Yep! I am back... And this time I literally gonna rock
