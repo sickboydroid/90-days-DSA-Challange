@@ -1,5 +1,15 @@
 # DSA Log
 
+## DAY 12 (25 MAR 2023)
+
+1. The DSA journey is going great but my academic studies are suffering
+2. I have a lot of self-doubt
+3. But now I am again (for the millionth time) going to start manage my time
+4. I have created few rules to follow, let's see how it goes
+5. I am still thankful to **Danill** who introduced me with DSA. Even though he sent a message about a month ago mentioning that he doesn't want to talk with me. But anyways, he is my model. Thanks to him once again. I won't forget his help and the interview on Pramp
+6. BTW I am working on my typing speed as well. I am now currently typing on my laptop instead of keyboard. I think typing on laptop is much easier than on keyboard.
+7. It is raining outside
+
 ## DAY 11 (23 MAR 2023)
 
 1. Phew! Ramadan has started. There are still more than hours left for iftar and I have already started to feel dizzy 

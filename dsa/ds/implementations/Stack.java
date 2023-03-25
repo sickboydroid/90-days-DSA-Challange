@@ -1,5 +1,5 @@
 /*
- * Implementation os stack with array is useless
+ * Implementation of stack with array is useless
  * Every operation is order 1 i.e O(1)
  * */
 public class Stack<T> {

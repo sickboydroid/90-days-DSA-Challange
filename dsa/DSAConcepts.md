@@ -1,5 +1,19 @@
 # DSA Concepts
 
+- [DSA Concepts](#dsa-concepts)
+  - [Time complexity](#time-complexity)
+  - [Taking intersection of two ranges](#taking-intersection-of-two-ranges)
+  - [DFS and BFS](#dfs-and-bfs)
+    - [BFS](#bfs)
+    - [DFS](#dfs)
+  - [Backtracking](#backtracking)
+  - [Recursion](#recursion)
+    - [Structure of recursive function](#structure-of-recursive-function)
+    - [Divide \& Conquer](#divide--conquer)
+  - [DP](#dp)
+    - [Memoization](#memoization)
+    - [Bottom-up approach](#bottom-up-approach)
+
 ## Time complexity
 
 - Usually denoted by O(n) where the n = input size
@@ -61,22 +75,31 @@ intersection = Math.min(range1[1], range2[1]);
 1. Tradeoff: Calling method is slow than looping
 2. **Call Stack:** IT IS A *STACK*. Don't forget that
 
-## Structure of recursive function
+### Structure of recursive function
 
-Three questions:
+- Three Questions:
+  1. **What is base case?**
+      - What will you pass the function so that it returns immediately? That should be your base case
+      - It should be such that you don't even do a single piece of work.
+        - e.g empty string, 0 length array
+  2. **What is smallest amount of work u can do in the problem?**
+  3. **With every function call, make sure to shrink the input**
+- Five Questions (Based on finding sum of first *n* natural numbers):
+  1. Find base case
+  2. Play around around examples and visualize
+  3. Relate hard cases with simpler cases
+     - If you have to sum first 5 natural numbers. Ask if i was given sum of 4 numbers can i find sum of 5 numbers?
+  4. Generalize the pattern.
+     - If sum of first n-1 is given, can i find sum of n numbers?
+  5. Code the solution
 
-1. **What is base case?**
-    - What will you pass the function so that it returns immediately? That should be your base case
-    - It should be such that you don't even do a single piece of work.
-      - e.g empty string, 0 length array
-2. **What is smallest amount of work u can do in the problem?**
-3. **With every function call, make sure to shrink the input**
+> **Recursive leap of faith**, assume that the answer of easier/smaller problem's answer will be correct. For example assume that sum(n-1) is correct and then work your way out
 
 ### Divide & Conquer
 
 3 Steps:
 
-1. Divide the problem into smaller subproblems. 
+1. Divide the problem into smaller subproblems.
 1. Conquer the subproblems by solving them recursively
    **Solve small enough problems by bruteforce**
 1. Combine bruteforce solutions to get solutions of subproblems and then finally solution to orignal problem
@@ -129,11 +152,29 @@ function(a, b, c) {
 > time = sub-problems * (time/subproblem)
 > Don't count memoized recursive calls
 
-Memoization recipe:
+- Memoization recipe:
     1. Make it work
        1. Visualize problem as a tree (break large problem into smaller ones)
-         - Tree nodes represent input and line may be output
-         -   
+          - Tree nodes (circles) represent input or the input that is changing over time  and line may be output
+       2. Implement tree into recursive code
+          - Leaf nodes are base cases
+       3. Test it (it can be slow but should be working)
+    2. Make it efficient
+       1. Add a memo object
+          - **Keys** represent arguments of function
+          - **Values** represent return values of function
+       2. Add a base case for memo object
+       3. Implement memo storing logic i.e store return value
+
+- Calculating time complexity and space complexity of recursive solution (without memo)
+  1. For **Binary Tree**:
+     - Time complexity: **O(2^h^</sup>)** where **h** is its height or number of levels
+     - Space Complexity: **O(h)**. It is the space for stack of method calls
+  2. For other, here are some tips:
+        - Height: What is the maximum number of 
+        - steps/levels before reaching to base case
+          - Pick on branch and follow it to the end
+
 
 ### Bottom-up approach
 

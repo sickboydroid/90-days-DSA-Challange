@@ -29,6 +29,10 @@ Tips:
   - [37. Sudoku Solver](#37-sudoku-solver)
   - [2220. Minimum Bit Flips to Convert Number](#2220-minimum-bit-flips-to-convert-number)
   - [40. Combination Sum II](#40-combination-sum-ii)
+  - [746. Min Cost Climbing Stairs](#746-min-cost-climbing-stairs)
+  - [1823. Find the Winner of the Circular Game](#1823-find-the-winner-of-the-circular-game)
+  - [198. House Robber](#198-house-robber)
+  - [213. House Robber II](#213-house-robber-ii)
 
 ## Worthy mentions (not from leetcode)
 
@@ -115,7 +119,7 @@ if(y < Integer.MIN_VALUE / 10 || (y == Integer.MIN_VALUE && digit < Integer.MIN_
 
 ## [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 
-- NIGHTMARE. Revise it without any excuse
+- NIGHTMARE. ==Revise== it without any excuse
 - Don't try to find the pivot. It is possible but lots of edge cases
 - Use modified binary search (kind of)
 
@@ -158,7 +162,7 @@ public int binarySearch(int[] nums, int target, boolean leftBias) {
 
 ## [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/)
 
-- REVISE
+- ==REVISE==
 - It is so confusing
 
 ## [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
@@ -240,3 +244,38 @@ class Solution {
     }
 }
 ```
+
+## [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/description/?envType=study-plan&id=dynamic-programming-i)
+
+- ==REVISE==
+- You can do `return memo[x] = val;`
+- You can also use `Arrays.fill(arr, -1)` to fill array with default value
+- Memo formula only works (correctly?) when your method is actually returning the answer of final problem
+- `System.gc()`: Beats `30% to 99.99%` in memory but Beats `100% to 9%` in runtime
+
+## [1823. Find the Winner of the Circular Game](https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/)
+
+- ==Revise==
+- If you have to create circular array or any DS, simply mod the index with the size.
+  - TIPs:
+    - Solve problem as if the index value automatically moved to the beginning
+    - Once solved, write the solution using same concept. Don't care about IndexOutOfBound
+    - Then replace every index with index % size. Size must be the size of array/list at that point
+    - Don't confuse logic with modding. Simple mod the index **after** you find the solution. Otherwise it will get complicated
+  - Also recall Division Lemma, n % k is always **[0, k) or [0, k-1]**
+    - For 0 based indexing mod with size
+    - For 1 based indexing mod with size and add 1
+    - For 2 based indexing mod with size and add 2
+- DOUBT: Think again if you really understand the recursive solution without using space
+  - The key is that you are assume that you know ans for f(n-1,k) but then you need to map the index of that circle to current circles index.
+  - In current circle k+1th person was holding gun and the circle you got answer has 1th person holding gun
+
+## [198. House Robber](https://leetcode.com/problems/house-robber/)
+
+- Great problem to learn bottom-up approach
+
+## [213. House Robber II](https://leetcode.com/problems/house-robber-ii/)
+
+- ==Revise==
+- Again, great problem for revising bottom-up approach
+- I still have hard time understanding its logic
