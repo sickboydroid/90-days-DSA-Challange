@@ -49,7 +49,6 @@ Met this guy on pramp. He is got into IIT with self-study and with rank 218 or s
 - Codeschool
 - Leetcode
 - https://medium.com/@rohitverma_87831
-- +447385946651
 
 ---
 
