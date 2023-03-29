@@ -1,5 +1,10 @@
 # DSA Log
 
+## DAY 13 (29 MAR 2023)
+
+1. Yesterday was my chemistry paper. It didn't go that well but it was ok.
+2. I might not be able to solve lots of questions in the upcoming days as english paper is coming but I will still try my best
+
 ## DAY 12 (25 MAR 2023)
 
 1. The DSA journey is going great but my academic studies are suffering
