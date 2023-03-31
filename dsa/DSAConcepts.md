@@ -13,6 +13,7 @@
   - [DP](#dp)
     - [Memoization](#memoization)
     - [Bottom-up approach](#bottom-up-approach)
+    - [Tabulation](#tabulation)
 
 ## Time complexity
 
@@ -175,7 +176,6 @@ function(a, b, c) {
         - steps/levels before reaching to base case
           - Pick on branch and follow it to the end
 
-
 ### Bottom-up approach
 
 Same computation as memoization but no recursion -> no stackoverflow exception
@@ -202,3 +202,18 @@ public static int fib(int n) {
     return dp[n];
 }
 ```
+
+### Tabulation
+
+- Can you visualize the tabulation as a binary tree for fib?
+- Initialize the base case in the table.
+- Sure, here are some dynamic programming problems that are of moderate difficulty and can be solved using a tabulated approach:
+
+1. Climbing Stairs: https://leetcode.com/problems/climbing-stairs/
+1. Unique Paths: https://leetcode.com/problems/unique-paths/
+1. Minimum Path Sum: https://leetcode.com/problems/minimum-path-sum/
+1. Longest Increasing Subsequence: https://leetcode.com/problems/longest-increasing-subsequence/
+1. Decode Ways: https://leetcode.com/problems/decode-ways/
+1. Coin Change: https://leetcode.com/problems/coin-change/
+1. Maximum Subarray: https://leetcode.com/problems/maximum-subarray/
+1. Palindromic Substrings: https://leetcode.com/problems/palindromic-substrings/

@@ -1,4 +1,4 @@
-#Skills
+# Skills
 
 ## Communication Skills
 
@@ -16,6 +16,11 @@
    - Some one is shouting
    - Kids are fighting
    - There is fight
+
+## English Speaking
+
+1. Think in English
+2. 
 
 ## Sentence frames and templates to practice forming sentences in English
 

@@ -33,6 +33,10 @@ Tips:
   - [1823. Find the Winner of the Circular Game](#1823-find-the-winner-of-the-circular-game)
   - [198. House Robber](#198-house-robber)
   - [213. House Robber II](#213-house-robber-ii)
+  - [50. Pow(x, n)](#50-powx-n)
+  - [876. Middle of the Linked List](#876-middle-of-the-linked-list)
+  - [143. Reorder List](#143-reorder-list)
+  - [796. Rotate String](#796-rotate-string)
 
 ## Worthy mentions (not from leetcode)
 
@@ -279,3 +283,36 @@ class Solution {
 - ==Revise==
 - Again, great problem for revising bottom-up approach
 - I still have hard time understanding its logic
+
+## [50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/)
+
+- If `n is Integer.MIN_VALUE` then `-n` will also be `Integer.MIN_VALUE`. Handle this case.
+- *O(n)* is easy but *O(log2 n)* is a little bit tricky.
+  - HINT: Square **x** and half **n**
+
+## [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/description/)
+
+- Following code returns middle node
+- `1 -> 2 -> 3 -> 4 -> 5` **3** is returned
+- `1 -> 2 -> 3 -> 4` **3** is returned
+
+```java
+    ListNode slow = head;
+    ListNode fast = head;
+    while(fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+```
+
+## [143. Reorder List](https://leetcode.com/problems/reorder-list/description/)
+
+- Find middle but be sure to create first list bigger
+- Break link and reverse the second half
+- Merge the first and 2nd half to get answer
+
+## [796. Rotate String](https://leetcode.com/problems/rotate-string/description/)
+
+- There is a one-liner solution.
+- Use indexOf, concat and contains only
