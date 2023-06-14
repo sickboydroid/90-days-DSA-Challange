@@ -12,3 +12,5 @@
   - [Algorithms Sedgewick (Book Notes)](dsa/algos-book/)
 
 ## Resources
+
+- Learn git: [Click here](https://learngitbranching.js.org/)
