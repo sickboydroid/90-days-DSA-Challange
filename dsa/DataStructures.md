@@ -53,3 +53,6 @@ arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
    1. capacity: size of dynamically allocated array
    1. size: Number of elements presently in dynamically allocated array
 - In java, `ArrayList` is dynamic array.
+
+## Hash table
+

@@ -37,6 +37,12 @@ Tips:
   - [876. Middle of the Linked List](#876-middle-of-the-linked-list)
   - [143. Reorder List](#143-reorder-list)
   - [796. Rotate String](#796-rotate-string)
+  - [55. Jump Game](#55-jump-game)
+  - [45. Jump Game II](#45-jump-game-ii)
+  - [53. Maximum Subarray](#53-maximum-subarray)
+  - [46. Permutations](#46-permutations)
+  - [78. Subsets](#78-subsets)
+  - [79. Word Search](#79-word-search)
 
 ## Worthy mentions (not from leetcode)
 
@@ -316,3 +322,45 @@ class Solution {
 
 - There is a one-liner solution.
 - Use indexOf, concat and contains only
+
+## [55. Jump Game](https://leetcode.com/problems/jump-game/description/)
+
+- Be greedy ;)
+- T: O(n)
+- S: O(1)
+
+## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/description/)
+
+- `REVISE`
+- You can make sort of trays
+- e.g: [2, 3, 1, 1, 4]
+- Tray one is 0. Tray two is 1 to 2. Tray three is 3 to 4.
+- From each tray you decide the next tray by seeing what is the longest jump you can make
+
+## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
+
+- You need include left elements only up until the sum is > 0
+
+## [46. Permutations](https://leetcode.com/problems/permutations/description/)
+
+- `Arrays.stream(ints).boxed().toList()` is too slow. I created a simple method that coverts integer array list. Guess what without my method, beats 6% and with my method, beats 98.5%
+- Moral of the story **ALWAYS CONVERT INTEGER ARRAY TO ARRAYLIST BY CUSTOM METHOD**
+
+- e.g: abcd
+- There are two ways of understanding the optimized algorithm. In both understandings, we are doing every operation on original array
+  1. `a` has four options. So we first swap it with `a` then `b` then `c` and then `d`. [abcd, bacd, cbad, dbca]
+     - Again we start with abcd and say that `b` has 3 options (because every element has been swapped with `a` so that option is eleminated). We first swap it with `b` then `c` and then `d`. [abcd, acbd, adcb]
+     - Now we go to the 3rd element i.e `c` and repeat the process
+  2. At first place we can place either `a` or `b` or `c` or `d`. So we do that by swapping every element with `a`.
+
+## [78. Subsets](https://leetcode.com/problems/subsets/description/)
+
+- `LinkedList` is actually `DoublyLinkedList` in java
+- `new List(listToCopy)` is linear time (as we are copying all elements)
+
+## [79. Word Search](https://leetcode.com/problems/word-search/description)
+
+- `anyCollection.clear()` method will remove all elements from that collection
+- Ordered pair `(x,y)` is equivalent to `x + " " + y`
+- HINT: You can mark visited cells by `*`
+- 5% to 90% by just moving from cell to next cell from recursion to for loop (see first accepted submission and 2nd accepted submission)

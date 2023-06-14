@@ -12,17 +12,17 @@ if <expr1> { if <expr2> <stmntA> else <stmntB> }
 
 ## Lambda expression
 
-- Interfaces defines behaivour
+- Interfaces defines behavior
 - Types of interface:
   - **Marker Interface**: No abstract methods
   - **Functional Interface**: One method (before 1.8 SAM)
   - **Normal Interface**: > One Method
 
 Lambda Expression
- : When you create implementation of a Functional interface you can use lamda expression
+ : When you create implementation of a Functional interface you can use lambda expression
 
 ```java
-// functional interface annotation prevents you from creating multiple mehtods in interfaces
+// functional interface annotation prevents you from creating multiple methods in interfaces
 @FunctionalInterface
 interface Consumer<T> {
    void accept(T t);
@@ -60,7 +60,7 @@ nums.forEach(cons);
 
 ## Stream API
 
-- Lazy evalutaion
+- Lazy evaluation
 - It is always better to use Mutable list for multithreading
 - Stream api => Builder Pattern
 - Once you use/consume the stream you can't reuse it
@@ -90,7 +90,7 @@ nums.stream()
    .map(n -> n * n)
    .forEach(System.out::println);
 
-// The first argument is intial carry (called identity)
+// The first argument is initial carry (called identity)
 // 2nd argument is the function that you perform
 // carry is basically output/return value of last function call
 int sum = nums.stream()

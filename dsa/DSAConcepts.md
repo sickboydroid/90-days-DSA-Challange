@@ -14,6 +14,7 @@
     - [Memoization](#memoization)
     - [Bottom-up approach](#bottom-up-approach)
     - [Tabulation](#tabulation)
+  - [Greedy Algorithms](#greedy-algorithms)
 
 ## Time complexity
 
@@ -217,3 +218,8 @@ public static int fib(int n) {
 1. Coin Change: https://leetcode.com/problems/coin-change/
 1. Maximum Subarray: https://leetcode.com/problems/maximum-subarray/
 1. Palindromic Substrings: https://leetcode.com/problems/palindromic-substrings/
+
+## Greedy Algorithms
+
+- A greedy algorithm makes the best available choice at each step, without considering the future implications of that choice. It aims to achieve a globally optimal solution by locally optimizing at each step.
+- 
