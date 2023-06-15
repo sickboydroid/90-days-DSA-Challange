@@ -1,5 +1,12 @@
 # DSA Log
 
+## DAY 14 (15 JUNE 2023)
+
+1. From past 2 days I have been learning about graphs (finally!!)
+2. Learned about binary tree (almost complete)
+3. Learned about Graph (40% done)
+4. Solved some nice problems on binary trees
+
 ## DAY 13 (29 MAR 2023)
 
 1. Yesterday was my chemistry paper. It didn't go that well but it was ok.

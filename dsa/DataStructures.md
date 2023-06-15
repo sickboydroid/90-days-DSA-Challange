@@ -54,5 +54,26 @@ arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
    1. size: Number of elements presently in dynamically allocated array
 - In java, `ArrayList` is dynamic array.
 
-## Hash table
+## Binary tree
 
+1. Traversal methods
+   1. Preorder traversal
+      - Traverse root node
+      - Traverse left subtree
+      - Traverse right subtree
+   2. Inorder traversal
+      - Traverse left subtree
+      - Traverse root node
+      - Traverse right subtree
+   3. Postorder traversal
+      - Traverse left subtree
+      - Traverse right subtree
+      - Traverse root node
+
+> TIP: Tree is a recursive function. Most of the problems can be solved as follows:
+>
+> - Check if node is null (base case)
+> - Do cal for left subtree (recursion)
+> - Do cal for right subtree (recursion)
+> - Do cal for current node
+> - Merge and return the answer
