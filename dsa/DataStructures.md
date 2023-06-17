@@ -56,19 +56,13 @@ arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
 
 ## Binary tree
 
-1. Traversal methods
-   1. Preorder traversal
-      - Traverse root node
-      - Traverse left subtree
-      - Traverse right subtree
-   2. Inorder traversal
-      - Traverse left subtree
-      - Traverse root node
-      - Traverse right subtree
-   3. Postorder traversal
-      - Traverse left subtree
-      - Traverse right subtree
-      - Traverse root node
+1. **Traversal methods**
+   1. *Preorder traversal*
+      - root node -> left subtree -> right subtree
+   2. *Inorder traversal*
+      - left subtree -> root node -> right subtree
+   3. *Postorder traversal*
+      - left subtree -> right subtree -> root node
 
 > TIP: Tree is a recursive function. Most of the problems can be solved as follows:
 >
