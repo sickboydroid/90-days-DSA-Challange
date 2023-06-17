@@ -43,6 +43,8 @@ Tips:
   - [46. Permutations](#46-permutations)
   - [78. Subsets](#78-subsets)
   - [79. Word Search](#79-word-search)
+  - [1161. Maximum Level Sum of a Binary Tree](#1161-maximum-level-sum-of-a-binary-tree)
+  - [102. Binary Tree Level Order Traversal](#102-binary-tree-level-order-traversal)
 
 ## Worthy mentions (not from leetcode)
 
@@ -364,3 +366,62 @@ class Solution {
 - Ordered pair `(x,y)` is equivalent to `x + " " + y`
 - HINT: You can mark visited cells by `*`
 - 5% to 90% by just moving from cell to next cell from recursion to for loop (see first accepted submission and 2nd accepted submission)
+
+## [1161. Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/)
+
+- `bfs` used
+- Now i know two ways of know current level *(next question will give you another method)*. `Null in queue` and `nested while loop`. The 2nd one is faster and less error prone
+
+```java
+// BFS via null
+public void bfs(TreeNode tree) {
+  Queue<TreeNode> nodes = new LinkedList<>();
+  nodes.add(tree);
+  nodes.add(null);
+  int level = 0;
+  while(!nodes.isEmpty()) {
+    level++;
+    TreeNode node = nodes.remove();
+    if(node == null) {
+      if(!nodes.isEmpty()) node.add(null);
+      continue;
+    }
+    if(node.left != null) nodes.add(node.left);
+    if(node.right != null) nodes.add(node.right);
+    System.out.println("LEVEL: " + level + " NODE: " + node.val);
+  }
+}
+
+// BFS via nested while loop
+public void bfs(TreeNode tree) {
+  Queue<TreeNode> nodes = new LinkedList<>();
+  nodes.add(tree);
+  int level = 0;
+  while(!nodes.isEmpty()) {
+    level++;
+    int size = nodes.size();
+    while(size > 0) {
+      size--;
+      TreeNode node = nodes.remove();
+      System.out.println("LEVEL: " + level + " NODE: " + node.val);
+      if(node.left != null) nodes.add(node.left);
+      if(node.right != null) nodes.add(node.right);
+    }
+  }
+}
+```
+
+## [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description)
+
+- New way of traversing binary tree in level order (bfs). No queue used, only recursion.
+
+```java
+List<List<Integer>> ans;
+public void solve(TreeNode root, int level) {
+    if(root == null) return;
+    if(ans.size() <= level) ans.add(new ArrayList<Integer>());
+    solve(root.left, level + 1);
+    ans.get(level).add(root.val);
+    solve(root.right, level + 1);
+}
+```
