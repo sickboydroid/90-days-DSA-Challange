@@ -1,7 +1,6 @@
 # Git
 
 - [Git](#git)
-  - [Nutshell](#nutshell)
   - [Misc](#misc)
   - [Branching](#branching)
   - [Merging](#merging)
@@ -10,18 +9,17 @@
   - [Cherry picking](#cherry-picking)
   - [Interactive rebasing](#interactive-rebasing)
 
-## Nutshell
+## Misc
 
 - Branches are pointers to specific commit
-- `git branch name; git checkout name`: create and switch a branch
+- Instead of mentioning whole hash of a commit, you can specify only few characters.
+- If there conflicts in any command, you can use `--continue` after fixing them to continue the operation.
+  - For example if cherry-picking caused some conflicts and you fixed those conflicts, run `git cherry-pick --continue` to continue cherry-picking
+- Operations that modify commit history (e.g Interactive rebasing) should generally be avoided on commits that have already been pushed to a remote repository.
 - `merging` and `rebasing` are two ways to combine work from different branches
   - (you are in **master** branch and want to combine work of **feature_x** work into it, *feature_x* branch won't be effected at all in both operations)
     1. `git merge feature_x` will create a new merged commit in *master* branch with the work of both the branches into it.
     2. `git rebase feature_x` will rebase the master branch
-- Instead of mentioning whole hash of a commit, you can specify only few characters.
-
-## Misc
-
 - `HEAD` symbolic name for currently checked out commit
   - `Detaching head` means attaching head to a commit rather than a branch
     - Even if the head and branch point to same commit, you can have detached head
@@ -29,14 +27,11 @@
   - `^` move up by one commit. (git checkout master^^^ moves you 3 parents up from master)
   - `~<num>` move up by num commits. (git checkout master~3 moves you 3 parents up from master)
 - `git branch -f main dest_ref` (forcefully) reassigns main branch to some other commit. (dest_ref can be another branch, commit hash or relative ref like HEAD~4)
-- If there conflicts in any command, you can use `--continue` after fixing them to continue the operation.
-  - For example if cherry-picking caused some conflicts and you fixed those conflicts, run `git cherry-pick --continue` to continue cherry-picking
-- Operations that modify commit history (e.g Interactive rebasing) should generally be avoided on commits that have already been pushed to a remote repository.
 
 ## Branching
 
 - **Branch early, and branch often**
-- Pointers to specific commit.
+- Branches are pointers to specific commit.
 - Very light weight (no space is consumed)
 - `git branch name` create a new branch
 - `git checkout name` switch to name branch
