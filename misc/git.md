@@ -8,9 +8,15 @@
   - [Reversing changes](#reversing-changes)
   - [Cherry picking](#cherry-picking)
   - [Interactive rebasing](#interactive-rebasing)
+  - [Tags](#tags)
+  - [Relative referencing](#relative-referencing)
+  - [Small Topics](#small-topics)
+    - [gitignore](#gitignore)
 
 ## Misc
 
+- Practice more: [Learn Git Branching](https://learngitbranching.js.org/)
+- Common mistakes: [Oh Shit Git!!](https://ohshitgit.com/)
 - Branches are pointers to specific commit
 - Instead of mentioning whole hash of a commit, you can specify only few characters.
 - If there conflicts in any command, you can use `--continue` after fixing them to continue the operation.
@@ -23,10 +29,8 @@
 - `HEAD` symbolic name for currently checked out commit
   - `Detaching head` means attaching head to a commit rather than a branch
     - Even if the head and branch point to same commit, you can have detached head
-- `Relative refs` convenient way of avoiding hashes by moving relative to branch or head
-  - `^` move up by one commit. (git checkout master^^^ moves you 3 parents up from master)
-  - `~<num>` move up by num commits. (git checkout master~3 moves you 3 parents up from master)
-- `git branch -f main dest_ref` (forcefully) reassigns main branch to some other commit. (dest_ref can be another branch, commit hash or relative ref like HEAD~4)
+- `@` alone is a short to *HEAD*
+  - `<refname>@{<date>}` e.g *master@{yesterday}* or *master@{2 months 1 week 3 hours ago}*
 
 ## Branching
 
@@ -36,7 +40,8 @@
 - `git branch name` create a new branch
 - `git checkout name` switch to name branch
 - `git checkout -b name` create and switch to name branch
-- `git switch name` similar to `git checkout` but still experimental 
+- `git switch name` similar to `git checkout` but still experimental
+- `git branch -f main dest_ref` (forcefully) reassigns main branch to some other commit. (dest_ref can be another branch, commit hash or relative ref like HEAD~4)
 
 ## Merging
 
@@ -51,6 +56,7 @@
 
 - Rebasing essentially takes a set of commits, "copies" them, and plops them down somewhere else
   - MORE TECHNICALLY: Rebasing involves moving the branch pointer to a new base commit and replaying the commits on top of it, creating new commits.
+- `git rebase <new_base_ref> <ref>` will rebase the ref on new_base_ref
 
 ---
 
@@ -104,3 +110,62 @@
 
   - Reorder commits
   - Simple move the lines up and below
+
+## Tags
+
+- Tags (aka anchors) act as (permanent) milestones. Contrary to tags, branches are always changing and temporary
+- `git tag v1.0 <ref>` will create a tag at ref. If ref not given then HEAD will be used
+- `git describe <ref>` will give you output of the form `<tag>_<num_commits>_g<hash>` where `tag` is the closest ancestor tag from which your ref or commit with hash `ref` is `num_commits` away.
+
+## Relative referencing
+
+- `Relative refs` convenient way of avoiding hashes by moving relative to branch or head
+- `^` move up by one commit. (git checkout master^^^ moves you 3 parents up from master)
+  - `<ref>^0` refers to the ref itself
+  - `<ref>^1` or `<ref>^` moves refers to the first parent of ref
+  - `<ref>^n` refers to the nth parent of ref
+- `~<num>` move up by num commits. (git checkout master~3 moves you 3 parents up from master)
+  - It follows only the first parent
+- Some commits posses multiple parents (like the one created during merging).
+
+---
+
+- Here is an example. Both commit nodes B and C are parents of commit node A. Parent commits are ordered left-to-right. Thus B is first parent and C is 2nd parent of A
+
+<pre>
+           G   H   I   J
+            \ /     \ /
+             D   E   F
+              \  |  / \
+               \ | /   |
+                \|/    |
+                 B     C
+                  \   /
+                   \ /
+                    A
+
+           A =      = A^0
+           B = A^   = A^1     = A~1
+           C =      = A^2
+           D = A^^  = A^1^1   = A~2
+           E = B^2  = A^^2
+           F = B^3  = A^^3
+           G = A^^^ = A^1^1^1 = A~3
+           H = D^2  = B^^2    = A^^^2  = A~2^2
+           I = F^   = B^3^    = A^^3^
+           J = F^2  = B^3^2   = A^^3^2
+</pre>
+
+## Small Topics
+
+### gitignore
+
+- Every gitignore can effect only files at or below its level
+- `/dir/file` */* refers to the dir of gitignore
+- `/dir/*.txt` matches all text files recursively in dir directory
+- `*.txt` matches all text files recursively in directory gitignore
+
+---
+
+- `!` -> negates pattern
+- `#` -> comment
