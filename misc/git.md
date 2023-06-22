@@ -12,11 +12,16 @@
   - [Relative referencing](#relative-referencing)
   - [Small Topics](#small-topics)
     - [gitignore](#gitignore)
+  - [Remote](#remote)
+    - [`git fetch`](#git-fetch)
+    - [`git pull`](#git-pull)
+    - [`git push`](#git-push)
 
 ## Misc
 
 - Practice more: [Learn Git Branching](https://learngitbranching.js.org/)
 - Common mistakes: [Oh Shit Git!!](https://ohshitgit.com/)
+- Man Tutorial: `man gittutorial`
 - Branches are pointers to specific commit
 - Instead of mentioning whole hash of a commit, you can specify only few characters.
 - If there conflicts in any command, you can use `--continue` after fixing them to continue the operation.
@@ -169,3 +174,31 @@
 
 - `!` -> negates pattern
 - `#` -> comment
+
+## Remote
+
+- `git clone` creates local copy of remote repository
+- Remote branches are special branches that reflect the state of remote repository. You cannot commit on them directly as then they won't reflect remote changes. You cannot assign them to some different commit either i.e `git branch -f origin/main <commit_hash>` will fail (or create a new local branch which will be diff from remote branch)
+  - They are special in the sense that when you check them out, git puts you in *detached head* state
+  - This is done so that you don't directly make any public changes
+  - `<remote_name>/<branch_name>` is the *required* naming convention for remote branches
+- By default when you clone repo, `origin` name is given the remote
+
+### `git fetch`
+
+- Performs two steps:
+  1. Downloads commits that our local representation of remote does not have
+  2. Updates out remote branches (i.e for example which commit `origin/main` points to)
+- It essentially synchronizes our local copy of remote repo with actual remote repo
+
+### `git pull`
+
+- Performs two steps:
+  1. Run *git fetch*
+  2. Merge whichever branch you downloaded with local corresponding branch
+
+### `git push`
+
+- Publish your changes to remote
+- If the remote has changed, i.e you have done work on the older version of repo, you can run `git fetch; git rebase origin/main main; git push` or shorthand `git pull --rebase; git push`.
+  - You can also do `git fetch; git merge origin/main main; git push` ro shorthand `git pull; git push`
