@@ -1,5 +1,11 @@
 # Java
 
+- [Java](#java)
+  - [Misc](#misc)
+  - [Lambda expression](#lambda-expression)
+  - [For each method](#for-each-method)
+  - [Stream API](#stream-api)
+
 ## Misc
 
 1. Ambiguous if:

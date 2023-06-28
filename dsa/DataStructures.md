@@ -1,5 +1,12 @@
 # Data Structures
 
+- [Data Structures](#data-structures)
+  - [List](#list)
+  - [Arrays](#arrays)
+  - [Dynamic Arrays](#dynamic-arrays)
+  - [Binary tree](#binary-tree)
+  - [Graph](#graph)
+
 Collection is a group of things. Every DS is an extension of collection.
 
 ## List
@@ -10,7 +17,7 @@ It is collection with order and no fixed length.
 
   - It is a list in which every element has an index.
   - Fast to access element [O(1)]
-  - Slow insertion and deletiion [O(n)]
+  - Slow insertion and deletion [O(n)]
 
 - ### Linked List
 
@@ -21,19 +28,19 @@ It is collection with order and no fixed length.
 
 - ### Doubly Linked List
 
-- Same as linked list except that each element contains value and of both next and previous elemets.
+- Same as linked list except that each element contains value and of both next and previous elements.
 - This makes it easy to traverse backwards
 
-> _TIP_: Don't forget refrences while inserting or deleting elements.
+> *TIP*: Don't forget references while inserting or deleting elements.
 
 ## Arrays
 
 - Three types of arrays:
-   1. __Static Arrays__: Size is determined at compile time
-   1. __Dynamically Allocated Arrays__: Size is determined at runtime
-   1. __Dynamic arrays__: Size is not fixed.
+   1. **Static Arrays**: Size is determined at compile time
+   2. **Dynamically Allocated Arrays**: Size is determined at runtime
+   3. **Dynamic arrays**: Size is not fixed.
 
-- Constant time read and write access is prequisite for arrays
+- Constant time read and write access is perquisite for arrays
 - Two dimensional array can be thought of as a plane.
 ``
 arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
@@ -71,3 +78,40 @@ arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
 > - Do cal for right subtree (recursion)
 > - Do cal for current node
 > - Merge and return the answer
+
+## Graph
+
+![Graph](assets/graph.png)
+
+1. It is a network of **nodes** connected via **edges**.
+2. Graph can be *undirected/directed* and *weighted/unweighted* depending on the type of edge
+3. **Storing a graph**:
+   1. Adjacency list
+      - List of Lists
+      - e.g: `[[[0,2]], [[1,3],[1,2]], [[2,3],[2,1]], [[3,2],[3,1]]`
+      - `graph[2][1][1]` will give you the 2's (node) 2nd edges destination which is 1 
+   2. Adjacency matrix
+      - Matrix of **V*V** is created where V is number of vertices
+      - Value at **a<sub>ij</sub>** represents the **weight** of edge from i to j. If it is 0, i and j are not connected.
+      - Diagonal of matrix are self-edges
+      - In nutshell, a<sub>ij</sub> = a<sub>ji</sub> = weight of edge b/w i and j vertex/node
+      - Row-2/Col-2 will contain all neighbors of 2 node.
+   3. Edge list
+      - List of edges
+      - e.g: `[[0,2], [1,2], [1,3], [2,3]]`
+      - Best use in MST
+   4. 2D Matrix (Implicit Graph)
+      - 2D array of size m*n is given
+      - Treated as an actual graph where you have four choices to move
+      - You can be asked to find if you can reach (c,d) from (a,b)
+4. **Graph Traversals**:
+   - There is no particular starting point in graph
+   - Since there can be cycles we need a way to check if a given node is already visited
+     - Usually a boolean array is used
+   1. BFS
+      - RULE: Visit cur node and all its neighboring nodes and then move to next
+      - Queue data structure is used
+      - Equivalent (not exactly) to level order traversal of binary tree
+   2. DFS
+      - RULE: Visit cur node and the first node of cur and then move to that node
+      - Stack data structure is used (recursion)

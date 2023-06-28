@@ -1,12 +1,13 @@
 # Network CC
 
 Videos:
+
 - [#1 Computer Networks: The Beginning](https://youtu.be/3QhU9jd03a0)
 - [#2 Computer Networks: The Internet](https://youtu.be/AEaKrq3SpW8)
 - [#3 Computer Networks: The World Wide Web](https://youtu.be/guvsH5OFizE)
 
-## Local Area Network (LAN) 
- 
+## Local Area Network (LAN)
+
 - It is a relatively small networks of close-by computers
 - The most famous LAN Tech is `Ethernet` and `WIFI`
   
@@ -37,7 +38,7 @@ Videos:
 
 - Dedicated single route from A to B
 - For example old telephone network, sender asked the customer care to join him with other recevier
- 
+
 ### Message Switching
 
 - Several stops b/w A to B.
@@ -50,7 +51,6 @@ Videos:
 - Big transmitions are choped into many small pieces called `Packets`
 - Chopping up date into small packets and passing these along flexible routes with spare capacity is very efficient. It is what the whole internet runs on today. This routing approach is called `packet switching`.
 - **ARPANET** was world's first packet switched network. It is the ancestor to the modern internet
-
 
 - Each packet has a destination address on it. The format is defined by `IP (Internet Protocol)`. Every device connected to internet gets an IP Addr.
 - Network routers constantly try to ensure speedy and reliable delivery which is called `Congestion Control`.

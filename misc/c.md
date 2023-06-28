@@ -1,5 +1,11 @@
 # C
 
+- [C](#c)
+  - [Printing](#printing)
+  - [DATA TYPES](#data-types)
+  - [Functions](#functions)
+  - [Strings](#strings)
+
 ## Printing
 
 ```c

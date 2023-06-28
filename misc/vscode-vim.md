@@ -1,5 +1,12 @@
 # Vim and Visual Studio
 
+- [Vim and Visual Studio](#vim-and-visual-studio)
+  - [Modes](#modes)
+  - [Vim for terminal](#vim-for-terminal)
+  - [Key bindings](#key-bindings)
+
+## Modes
+
 - Three modes:
   - Normal mode, move around
   - Insert mode, edit code
