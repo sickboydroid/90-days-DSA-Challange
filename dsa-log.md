@@ -1,5 +1,37 @@
 # DSA Log
 
+- [DSA Log](#dsa-log)
+  - [DAY 16 (28 JUNE 2023)](#day-16-28-june-2023)
+  - [DAY 15 (22 JUNE 2023)](#day-15-22-june-2023)
+  - [DAY 14 (15 JUNE 2023)](#day-14-15-june-2023)
+  - [DAY 13 (29 MAR 2023)](#day-13-29-mar-2023)
+  - [DAY 12 (25 MAR 2023)](#day-12-25-mar-2023)
+  - [DAY 11 (23 MAR 2023)](#day-11-23-mar-2023)
+  - [DAY 10 (21 MAR 2023)](#day-10-21-mar-2023)
+  - [DAY 9 (15 MAR 2023)](#day-9-15-mar-2023)
+  - [DAY 8 (14 JAN 2023)](#day-8-14-jan-2023)
+  - [DAY 7 (13 JAN 2023)](#day-7-13-jan-2023)
+  - [DAY 6 (11 JAN 2023)](#day-6-11-jan-2023)
+  - [DAY ... (Going through breakup)](#day--going-through-breakup)
+  - [DAY 5](#day-5)
+  - [DAY 4](#day-4)
+  - [DAY 3](#day-3)
+  - [DAY 2](#day-2)
+  - [DAY - 1](#day---1)
+
+## DAY 16 (28 JUNE 2023)
+
+1. I tried a contest (virtual one) on codeforce yesterday. I was able to come up with solutions of first two but they were too slow
+2. I thought may be i should do contests to stay motivated but it was too difficult for me
+3. Now i will complete graph data structure first and then will try to keep a streak of 30 days on leetcode
+4. Tomorrow is Eid btw!!
+
+## DAY 15 (22 JUNE 2023)
+
+1. Learning git form the past week or so
+2. Learned about branching, rebasing, merging, cherry-picking and other stuff
+3. It might take 2 to 4 days before i complete it
+
 ## DAY 14 (15 JUNE 2023)
 
 1. From past 2 days I have been learning about graphs (finally!!)

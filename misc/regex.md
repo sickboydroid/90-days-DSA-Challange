@@ -1,37 +1,10 @@
 # REGEX
 
-- `global`:
-  - If disabled then matches only the first occurrence
-
-- `+`:
-  - Matches one or more of the preceding character
-
-- `?`:
-  - Matches zero or one of the preceding character (optional)
-
-- `*`:
-  - Matches zero or more of the preceding character
-
-- `(group){min, max}`:
-  - Matches the preceding group between min and max times
-
-- `.`:
-  - Matches any character except newline
-
-- `\w`:
-  - Matches any letter or underscore
-
-- `\s`:
-  - Matches any whitespace character
-
-- `\d`:
-  - Matches any digit
-
-- `^`:
-  - Matches the beginning of a line
-
-- `$`:
-  - Matches the end of a line
+- [REGEX](#regex)
+  - [EXAMPLES on GROUPS:](#examples-on-groups)
+  - [Look behind and look ahead](#look-behind-and-look-ahead)
+  - [Naming groups](#naming-groups)
+  - [Java Regex](#java-regex)
 
 > Capitalizing any of the above negates it (e.g. `\D` matches any character that is not a digit)
 

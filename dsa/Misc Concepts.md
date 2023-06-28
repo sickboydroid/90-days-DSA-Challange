@@ -1,5 +1,10 @@
 # Misc Concepts
 
+- [Misc Concepts](#misc-concepts)
+  - [UNICODE](#unicode)
+  - [Co-Primes](#co-primes)
+  - [Bit-Manipulation](#bit-manipulation)
+
 ## UNICODE
 
 - Java uses **unicode** character set
