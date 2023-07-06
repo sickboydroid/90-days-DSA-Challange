@@ -3,8 +3,10 @@
 ## MISC
 
 - I created this repo on Dec 29 2022
-- This readme acts as a log
 - Quickly Jump to:
+  - [Leetcode Log](leetcode.md)
+  - [Git](misc/git.md)
+  - [Java](dsa/JavaConcepts.md)
   - [DSA Notes](dsa/)
   - [DSA Log](dsa-log.md)
   - [Leetcode Log](leetcode.md)
