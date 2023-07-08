@@ -13,6 +13,10 @@
   - [Small Topics](#small-topics)
     - [gitignore](#gitignore)
   - [Remote](#remote)
+    - [Some use cases](#some-use-cases)
+      - [Diverged history](#diverged-history)
+      - [Pushing a branch](#pushing-a-branch)
+      - [Contributing to Open-Source projects](#contributing-to-open-source-projects)
     - [`git fetch`](#git-fetch)
     - [`git pull`](#git-pull)
     - [`git push`](#git-push)
@@ -184,8 +188,37 @@
   - `<remote_name>/<branch_name>` is the *required* naming convention for remote branches
 - By default when you clone repo, `origin` name is given the remote
 
-### `git fetch`
+### Some use cases
 
+#### Diverged history
+
+- **CASE:** If the remote repository has changed since your last pull and you attempt to push your commits using git push, it will fail. You will have to rebase the work you have done based on the latest state of remote repository.
+
+- Lets say you are on *main* branch and you have done some commits on it. While you were doing those commits on your local branch, your colleagues also pushed some commits to the main branch of remote repository. In this case, you should perform the following steps:
+
+  - `git fetch` to update your local version of remote repository
+  - `git rebase origin/main` to make your local *main* based on the remote version of *main*
+    - You can of-course use `git merge origin/main` but i won't suggest it
+  - `git push` to finally upload your changes
+
+#### Pushing a branch
+
+- **CASE:** You created a new local branch and want to push it.
+  - `git push -u origin feature` will create a new `origin/feature` branch in your local repository as well as a new `feature` branch in your actual remote repository with all the changes from your feature branch
+    - Note: Even if you use only `git push origin feature` and you don't have a remote feature branch, git will behave same as above
+
+#### Contributing to Open-Source projects
+
+- **CASE:** You want to contribute to an open-source project on github
+  - Fork the repository and clone it
+  - Create new branch and add features or bug fixes
+  - Once done, add the original projects url to your remotes. `upstream` is usually used as the name
+  - Fetch the latest changes from original repo and rebase your work based on it
+  - Push the changes your forked repo
+  - Go to *github.com* and create a *pull-request*
+
+### `git fetch`
+ 
 - Performs two steps:
   1. Downloads commits that our local representation of remote does not have
   2. Updates out remote branches (i.e for example which commit `origin/main` points to)
@@ -200,5 +233,5 @@
 ### `git push`
 
 - Publish your changes to remote
-- If the remote has changed, i.e you have done work on the older version of repo, you can run `git fetch; git rebase origin/main main; git push` or shorthand `git pull --rebase; git push`.
-  - You can also do `git fetch; git merge origin/main main; git push` ro shorthand `git pull; git push`
+- If the remote has changed, (see [Diverged History](#diverged-history)), you can run `git fetch; git rebase origin/main main; git push` or shorthand `git pull --rebase; git push`.
+  - You can also do `git fetch; git merge origin/main main; git push` or shorthand `git pull; git push`
