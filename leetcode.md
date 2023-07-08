@@ -45,6 +45,8 @@ Tips:
   - [79. Word Search](#79-word-search)
   - [1161. Maximum Level Sum of a Binary Tree](#1161-maximum-level-sum-of-a-binary-tree)
   - [102. Binary Tree Level Order Traversal](#102-binary-tree-level-order-traversal)
+  - [797. All Paths From Source to Target](#797-all-paths-from-source-to-target)
+  - [994. Rotting Oranges](#994-rotting-oranges)
 
 ## Worthy mentions (not from leetcode)
 
@@ -425,3 +427,14 @@ public void solve(TreeNode root, int level) {
     solve(root.right, level + 1);
 }
 ```
+
+## [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target)
+
+- Use dfs
+- Beats 26% when using **LinkedList** for path and beats 96% when using **ArrayList**. It is f**kin' ridiculous
+- (tested in ide) Even if you add 10^7 elements and remove them using `ArrayList.remove(size()-1)` and `LinkedList.removeLast()`, still ArrayList is about 4 times faster.
+
+## [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+
+- Actual common uses **multi-source bfs** and recall that bfs requires *Queue* data structure
+- My first solution simulated everything without using extra space. The interesting part that according to leetcode both beat 87% which is strange because I guess my solution was going reiterating over same element a lot of times
