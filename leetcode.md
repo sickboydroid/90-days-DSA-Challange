@@ -47,6 +47,7 @@ Tips:
   - [102. Binary Tree Level Order Traversal](#102-binary-tree-level-order-traversal)
   - [797. All Paths From Source to Target](#797-all-paths-from-source-to-target)
   - [994. Rotting Oranges](#994-rotting-oranges)
+  - [200. Number of Islands](#200-number-of-islands)
 
 ## Worthy mentions (not from leetcode)
 
@@ -438,3 +439,7 @@ public void solve(TreeNode root, int level) {
 
 - Actual common uses **multi-source bfs** and recall that bfs requires *Queue* data structure
 - My first solution simulated everything without using extra space. The interesting part that according to leetcode both beat 87% which is strange because I guess my solution was going reiterating over same element a lot of times
+
+## [200. Number of Islands](https://leetcode.com/problems/number-of-islands)
+
+- Easy but neat thing is that you can solve it using both bfs and dfs
