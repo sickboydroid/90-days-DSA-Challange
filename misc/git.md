@@ -20,6 +20,8 @@
     - [`git fetch`](#git-fetch)
     - [`git pull`](#git-pull)
     - [`git push`](#git-push)
+      - [Advanced `git push`](#advanced-git-push)
+    - [Remote Tracking (Connection b/w local and remote branches)](#remote-tracking-connection-bw-local-and-remote-branches)
 
 ## Misc
 
@@ -70,7 +72,7 @@
 ---
 
 - In example below, **feature_branch** and **master** branch had common ancestor **F**. After a while both branches progressed. Lets say you want to incorporate changes of **master** into **feature_branch**.
-  - You run `git rebase master` which tells vim to make base commit of feature_branch as **master** (i.e H). Vim copies all commits of *feature_branch* that are not in *master* and then replays them on top of the latest commit in *master*
+  - You run `git rebase master` which tells vim to make base commit of feature_branch as **master** (i.e H). Git copies all commits of *feature_branch* that are not in *master* and then replays them on top of the latest commit in *master*
 
 **Before the rebase**:
 <pre>
@@ -89,7 +91,7 @@
 
 - `git reset` and `git revert` are used to reverse changes
 - `git reset HEAD^` will remove the current commit as if it never happened
-  - May find problems with remote repos as it rewrites history
+  - It may cause issues with remote repositories as it modifies the commit history
 - `git revert HEAD^` will add a new commit such that it exactly reverses the current commit
   - In other words, current state repo will be exactly the same as of HEAD^ but the commit at will not be removed
 
@@ -235,3 +237,19 @@
 - Publish your changes to remote
 - If the remote has changed, (see [Diverged History](#diverged-history)), you can run `git fetch; git rebase origin/main main; git push` or shorthand `git pull --rebase; git push`.
   - You can also do `git fetch; git merge origin/main main; git push` or shorthand `git pull; git push`
+
+#### Advanced `git push`
+
+- `git push <remote> <place>`
+  - e.g **git push origin feature** where *feature* is the branch from which Git will grab commits and apply them to the remote branch of remote named *origin* which *feature* is set to track
+  - It does not matter where you execute this command
+  - If *feature* branch does not track any remote branch then Git will automatically create and push *feature* branch to remote
+
+### Remote Tracking (Connection b/w local and remote branches)
+
+- **Remote tracking** is a property of branches.
+  - If a local branch tracks a remote branch then `git merge` and `git push` have implied target as *remote branch*. In other words, *git merge* automatically merges current branch with its remote branch and *git push* automatically sets destination as remote branch.
+
+- You can make a branch to track remote branch via following two methods
+  1. `git checkout -b my_branch origin/main` will create a new branch *my_branch* and set it to track *origin/main*
+  2. `git branch -u origin/main my_branch` will set *my_branch* to track *origin/main*. If you have already checked out my_branch, you can omit the branch name.
