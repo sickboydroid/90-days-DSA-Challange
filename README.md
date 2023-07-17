@@ -6,6 +6,7 @@
 - Quickly Jump to:
   - [Leetcode Log](leetcode.md)
   - [Git](misc/git.md)
+  - [SSH](misc/ssh.md)
   - [Java](dsa/JavaConcepts.md)
   - [DSA Notes](dsa/)
   - [DSA Log](dsa-log.md)
