@@ -8,6 +8,7 @@
   - [Git](misc/git.md)
   - [SSH](misc/ssh.md)
   - [Java](dsa/JavaConcepts.md)
+  - [Python](python/readme.md)
   - [DSA Notes](dsa/)
   - [DSA Log](dsa-log.md)
   - [Leetcode Log](leetcode.md)
