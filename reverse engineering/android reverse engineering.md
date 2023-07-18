@@ -3,7 +3,7 @@
 ## Using smalidea plugin
 
 1. Just decompile the apk using apktool
-2. Make sure you have enabled debugging. Add following line to AndroidManifest.xml:
+2. Make sure you have enabled debugging. Add following line to AndroidManifest.xml in the **application** tag:
 
     ```xml
     android:debuggable="true"
