@@ -222,4 +222,4 @@ public static int fib(int n) {
 ## Greedy Algorithms
 
 - A greedy algorithm makes the best available choice at each step, without considering the future implications of that choice. It aims to achieve a globally optimal solution by locally optimizing at each step.
-- 
+  

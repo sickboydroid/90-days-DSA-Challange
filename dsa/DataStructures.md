@@ -6,6 +6,11 @@
   - [Dynamic Arrays](#dynamic-arrays)
   - [Binary tree](#binary-tree)
   - [Graph](#graph)
+    - [Storing a graph](#storing-a-graph)
+    - [Graph Traversals](#graph-traversals)
+    - [Cycle Detection](#cycle-detection)
+      - [Topological sorting](#topological-sorting)
+    - [Shortest path algorithms](#shortest-path-algorithms)
 
 Collection is a group of things. Every DS is an extension of collection.
 
@@ -85,33 +90,54 @@ arr[x][y]: 1st index for x (row) and 2nd index for y (cols).
 
 1. It is a network of **nodes** connected via **edges**.
 2. Graph can be *undirected/directed* and *weighted/unweighted* depending on the type of edge
-3. **Storing a graph**:
-   1. Adjacency list
-      - List of Lists
-      - e.g: `[[[0,2]], [[1,3],[1,2]], [[2,3],[2,1]], [[3,2],[3,1]]`
-      - `graph[2][1][1]` will give you the 2's (node) 2nd edges destination which is 1 
-   2. Adjacency matrix
-      - Matrix of **V*V** is created where V is number of vertices
-      - Value at **a<sub>ij</sub>** represents the **weight** of edge from i to j. If it is 0, i and j are not connected.
-      - Diagonal of matrix are self-edges
-      - In nutshell, a<sub>ij</sub> = a<sub>ji</sub> = weight of edge b/w i and j vertex/node
-      - Row-2/Col-2 will contain all neighbors of 2 node.
-   3. Edge list
-      - List of edges
-      - e.g: `[[0,2], [1,2], [1,3], [2,3]]`
-      - Best use in MST
-   4. 2D Matrix (Implicit Graph)
-      - 2D array of size m*n is given
-      - Treated as an actual graph where you have four choices to move
-      - You can be asked to find if you can reach (c,d) from (a,b)
-4. **Graph Traversals**:
-   - There is no particular starting point in graph
-   - Since there can be cycles we need a way to check if a given node is already visited
-     - Usually a boolean array is used
-   1. BFS
-      - RULE: Visit cur node and all its neighboring nodes and then move to next
-      - Queue data structure is used
-      - Equivalent (not exactly) to level order traversal of binary tree
-   2. DFS
-      - RULE: Visit cur node and the first node of cur and then move to that node
-      - Stack data structure is used (recursion)
+
+### Storing a graph
+
+1. Adjacency list
+   - List of Lists
+   - e.g: `[[[0,2]], [[1,3],[1,2]], [[2,3],[2,1]], [[3,2],[3,1]]`
+   - `graph[2][1][1]` will give you the 2's (node) 2nd edges destination which is 1 
+2. Adjacency matrix
+   - Matrix of **V*V** is created where V is number of vertices
+   - Value at **a<sub>ij</sub>** represents the **weight** of edge from i to j. If it is 0, i and j are not connected.
+   - Diagonal of matrix are self-edges
+   - In nutshell, a<sub>ij</sub> = a<sub>ji</sub> = weight of edge b/w i and j vertex/node
+   - Row-2/Col-2 will contain all neighbors of 2 node.
+3. Edge list
+   - List of edges
+   - e.g: `[[0,2], [1,2], [1,3], [2,3]]`
+   - Best use in MST
+4. 2D Matrix (Implicit Graph)
+   - 2D array of size m*n is given
+   - Treated as an actual graph where you have four choices to move
+   - You can be asked to find if you can reach (c,d) from (a,b)
+
+### Graph Traversals
+
+- There is no particular starting point in graph
+- Since there can be cycles we need a way to check if a given node is already visited. Usually a boolean array is used for this
+
+1. BFS
+   - RULE: Visit cur node and all its neighboring nodes and then move to next
+   - Queue data structure is used
+   - Equivalent (not exactly) to level order traversal of binary tree
+2. DFS
+   - RULE: Visit cur node and the first node of cur and then move to that node
+   - Stack data structure is used (recursion)
+
+### Cycle Detection
+
+- *Directed Graphs:*
+  - Def of cycle: If you start from a node and do a bfs/dfs and reach back to the node from any path then there is a cycle.
+  - It will be closed all the time so don't worry about that
+- *Undirected Graphs:*
+  - Def of cycle: In an undirected graph, a cycle is a closed path that starts and ends at the same node and the last node in the path must have a parent node different from the first node.
+  - In nutshell the condition is, "When your dfs encounters a child node which is visited but not your parent then there is cycle"
+
+#### Topological sorting
+
+- It is a linear order of vertices such that every directed edge *u -> v*, the vertex *u comes before v* in the order.
+- Defined for **DAGs** only.
+- It shows us dependency of one action on another. (may be gradle will use it)
+
+### Shortest path algorithms
