@@ -8,6 +8,9 @@
   - [Set](#set)
   - [Frozen Set](#frozen-set)
   - [Strings](#strings)
+  - [Collection module](#collection-module)
+    - [deque](#deque)
+    - [namedtuple](#namedtuple)
 
 ## Misc
 
@@ -116,7 +119,7 @@ a, *b, c = nums # unpacking
 
 ## Dictionary
 
-- *Unordered*, *Mutable*, *Key-value pairs*
+- *Ordered* (since 3.7...), *Mutable*, *Key-value pairs*
 - If you are using **integers** as *keys* then `dict[num]` will act as if num is *key* rather than index
 - *Keys* must be immutable (i.e to be hashable). Thus *list* can't be used as a key
 - **Creating Dict and operating on elements:**
@@ -238,4 +241,37 @@ nested_formatting = '{:^^11}'.format('sickboy')
 # base conversion
 n = 42
 print(f'{n:b} {n:#b} {n:o} {n:d} {n:#x}') # output: 101010 0b101010 52 42 0x2a
+```
+
+## Collection module
+
+### deque
+
+- Deque is a double ended queue. That is you can use it as a queue and a stack.
+- `d.append(item)`, `d.pop()` and `d.extend(list)` for using it as queue
+- `d.appendleft()`, `d.popleft()` and `d.extendleft(list)` for using it as stack
+- `d.rotate(num)` will shift all elements by num places
+
+### namedtuple
+
+- tuples with names of each position
+- They are light-weight than dictionaries
+- You can use indexing as well. In nutshell, you do anything with namedtuples that you can do with in-built tubles
+
+```python
+from collections import namedtuple
+
+# create a tuple Employee with named positions
+Employee = namedtuple('Employee', 'Name Age Office DOB')
+Employee = namedtuple('Employee' ,'Name, Age, Office, DOB')
+Employee = namedtuple('Employee12', ['Name', 'Age', 'Office', 'DOB'])
+
+# init Employee
+emp = Employee('sickboy', 17, Office='New York', DOB=-1)
+name, *_ = emp # unpacking
+
+# accessing elements
+print(name)
+print(emp[0])
+print(emp.Name)
 ```
