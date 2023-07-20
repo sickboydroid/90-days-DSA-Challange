@@ -275,3 +275,14 @@ print(name)
 print(emp[0])
 print(emp.Name)
 ```
+
+## itertools
+
+- itertools module give some tools for iterators
+
+### product
+
+- `product(iter1, iter2)` will give you a cartesian product of iter1 and iter2
+- `permutations(iter)` will give you all possible permuations
+- `permutations(iter, size)` will give you all possible permuations take size at a time
+- There is also `combinations(iter1, size)`, `accumulate(iter, func=operator.add)`,  
