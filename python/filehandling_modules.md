@@ -1,4 +1,8 @@
-# pathlib
+# File Handling Modules
+
+- [File Handling Modules](#file-handling-modules)
+  - [Path class](#path-class)
+    - [glob](#glob)
 
 ## Path class
 
