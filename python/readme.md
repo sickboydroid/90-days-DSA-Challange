@@ -1,4 +1,3 @@
 # Python
 
-- Quickly Jump to:
-  - [Data types](01_data_types.md)
+- This directory contains all the things I have learned about python so far
