@@ -94,3 +94,15 @@ except ExceptionGroup:
   2. Creating a logging config file and using `logging.config.fileConfig(filepath)` function
   3. *(recommended)* Creating a *dictionary* of config and passing it to the `logging.config.dictConfig(config)`
      - It is recommended because you can populate the *dictionary* directly using json, YAML, python code and so on
+
+```python
+logging.getLogger('animal')
+
+# both lines create/access the same logger 'animal.human'
+human = logging.getLogger('animal').getChild('human')
+human = logging.getLogger('animal.human')
+
+# Since human is child of animal logger, all handlers of animal logger will receive this event
+# thus if human saves logs in 'human.log' and animal saves logs in 'animal.log', both files will a new log entry
+human.warning('Save water! Save earth!!')
+```
