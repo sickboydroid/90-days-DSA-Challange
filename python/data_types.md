@@ -15,11 +15,11 @@
 ## Misc
 
 1. `sys.getsizeof(...)` will give the space occupied by the data type in **bytes**
-2. `timeit.timeit(stmt="<stmt>", number=<num>)` will repeat/run *stmt* *num* number of times and give the time taken by it to execute
+2. `timeit.timeit(stmt="<stmt>", number=<num>)` will repeat/run _stmt_ _num_ number of times and give the time taken by it to execute
 
 ## Lists
 
-- *Ordered*, *Mutable*, allows *duplicates*
+- _Ordered_, _Mutable_, allows _duplicates_
 - `len(list)` to get size
 - `list.insert(index, item)` to insert an item the index
 - `list.pop()` & `list.append(item)` to pop and add item at the end of list
@@ -31,13 +31,13 @@
 - `list = [item1, item2] * 5` will give a list of 10 elements with item1 and item2
 - `list = list1 + list2` will merge the two lists
 - **Slicing `list[start:end:step]`**:
-  - *start* index is by default 0
-  - *end* index is by default len(list) - 1
-  - *step* is by default 1. It can be negative. In fact `list[::-1]` can used to reverse the list
+  - _start_ index is by default 0
+  - _end_ index is by default len(list) - 1
+  - _step_ is by default 1. It can be negative. In fact `list[::-1]` can used to reverse the list
   - `list[:]` can be used to copy the list
 - **List comprehension**:
   - [Official doc](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
-  - `<exp> for item in list if condition` You can have multiple *if* and *for* clauses
+  - `<exp> for item in list if condition` You can have multiple _if_ and _for_ clauses
   - `<exp>` can another list comprehension
 
 ```python
@@ -103,7 +103,7 @@ for i in range(len(matrix)):
 
 ## Tuple
 
-- *Ordered*, *Immutable*, allows *duplicates*
+- _Ordered_, _Immutable_, allows _duplicates_
 - **Creating tuple:**
 
 ```python
@@ -119,9 +119,9 @@ a, *b, c = nums # unpacking
 
 ## Dictionary
 
-- *Ordered* (since 3.7...), *Mutable*, *Key-value pairs*
-- If you are using **integers** as *keys* then `dict[num]` will act as if num is *key* rather than index
-- *Keys* must be immutable (i.e to be hashable). Thus *list* can't be used as a key
+- _Ordered_ (since 3.7...), _Mutable_, _Key-value pairs_
+- If you are using **integers** as _keys_ then `dict[num]` will act as if num is _key_ rather than index
+- _Keys_ must be immutable (i.e to be hashable). Thus _list_ can't be used as a key
 - **Creating Dict and operating on elements:**
 
 ```python
@@ -152,32 +152,32 @@ dict1.update(dict2) # all elements of dict2 + elements which are unique to dict1
 
 ## Set
 
-- *Unordered*, *Mutable*, does not allow *duplicates*
+- _Unordered_, _Mutable_, does not allow _duplicates_
 - `set.add(item)` to add an item
-- `set.remove(item)` and `set.discard()` remove an item. Former throws *KeyError* if the item sdoes not exist
+- `set.remove(item)` and `set.discard()` remove an item. Former throws _KeyError_ if the item sdoes not exist
 - `set.clear()` removes all elements
 - `set.pop()` removes and returns a random element
 - `set1.union(set2)`, `set1.intersection(set2)`, `set1.difference(set2)` and `set1.symmetric_difference(set2)` will perform operation and return a new set
-- `set1.update(set2)`, `set1.intersection_update(set2)` and so on will perform the operation inplace on *set1*
+- `set1.update(set2)`, `set1.intersection_update(set2)` and so on will perform the operation inplace on _set1_
 - `set1.issubset(set2)`, `set1.issuperset(set2)` and `set1.isdisjoint(set2)` are some other operations
 
 ## Frozen Set
 
-- *Unordered*, *Immutable*, does not allow *duplicates*
+- _Unordered_, _Immutable_, does not allow _duplicates_
 - It is a set which is immutable
 
 ## Strings
 
-- *substrings* and *characters* are accessed by treating strings as lists i.e *slicing* works the same way
+- _substrings_ and _characters_ are accessed by treating strings as lists i.e _slicing_ works the same way
 - `str.strip()` removes trailing white spaces
-- `str.upper()`, `str.lower()`, `str.startswith(str2)`, `str.endswith(str2)`, `str.count(str2)`, `str.replace(str2, replacement)`, 
+- `str.upper()`, `str.lower()`, `str.startswith(str2)`, `str.endswith(str2)`, `str.count(str2)`, `str.replace(str2, replacement)`,
 - `str.find(str2)` will return the starting index of str2 if str2 is substring of str. Otherwise -1
-- `str.split(sep)` will return a list. By default sep is *\s*
-- `'_'.join(list)` will create a string from list with *_* separating its elements
+- `str.split(sep)` will return a list. By default sep is _\s_
+- `'_'.join(list)` will create a string from list with \_\_\_ separating its elements
 - Strings are immutable so use
 - **Formatting:**
   - See [official doc examples](https://docs.python.org/3/library/string.html#format-examples)
-  - Default *fill* for strings is ' '
+  - Default _fill_ for strings is ' '
   - There are three methods of formatting string:
     1. Using `%`
     2. Using `.format()`
@@ -185,7 +185,7 @@ dict1.update(dict2) # all elements of dict2 + elements which are unique to dict1
 - **Docstrings:**
   - Generally used for documentation
 - **Colorful text:**
-  - *ANSI* characters are used for colors
+  - _ANSI_ characters are used for colors
   - To start formatting `\033[<num>m` where num can be an integer from 1 to 107 (depends on terminal). To end formatting, use `\033[0m`.
 
 ```python
@@ -275,14 +275,3 @@ print(name)
 print(emp[0])
 print(emp.Name)
 ```
-
-## itertools
-
-- itertools module give some tools for iterators
-
-### product
-
-- `product(iter1, iter2)` will give you a cartesian product of iter1 and iter2
-- `permutations(iter)` will give you all possible permuations
-- `permutations(iter, size)` will give you all possible permuations take size at a time
-- There is also `combinations(iter1, size)`, `accumulate(iter, func=operator.add)`,  
