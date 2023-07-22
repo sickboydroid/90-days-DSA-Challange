@@ -8,6 +8,7 @@
     - [Regex and Python](#regex-and-python)
   - [JSON](#json)
     - [Conversion table](#conversion-table)
+  - [functools](#functools)
 
 ## re (for regex)
 
@@ -89,3 +90,17 @@ True             true
 False            false
 None             null
 </pre>
+
+## functools
+
+- `functools.partial(func, arg1, arg2, ..., karg1=value1, karg2=value2)`: Used to create a variant func that has some parameters filled by default. This is called **partial function application**
+
+```python
+
+def log(message, subsystem):
+    # Write the contents of 'message' to the specified subsystem.
+    print('%s: %s' % (subsystem, message))
+
+server_log = functools.partial(log, subsystem='server')
+server_log('Unable to open socket') # equivalent to log('...', 'server')
+```
