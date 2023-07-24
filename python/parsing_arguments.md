@@ -40,15 +40,16 @@ parser.add_argument('filename')              # positional argument (MUST BE SUPP
 p.a('-c', '--count', type=int)               # option that takes an int value
 p.a('-e', '--exclude', action='store_true')  # on/off flag
 
-p.a('-f', '--files', nargs='+', type=str) # you can pass 1 or more arguments
+p.a('-f', '--files', nargs='+', metavar='FILE' type=str) # you can pass 1 or more arguments
 p.a('-d', '--child', action='append', type=str, help='mention your children') # you can use --child multiple times
+p.a('--copy', nargs=2, metatvar=('SRC', 'DEST'), action='append', type=str, help='mention your children') # you can use --copy multiple times and each time you will have to provide two args 'src' and 'dest'
 p.a('--version', action='version', version='%(prog)s 12.3.3rc1') #
 
 p.a('-n', '--atm-pin', choices=range(0,11), type=int, help='one digit atm pin') # accepts an atm pin of single digit
 
 # accepts users name which will be stored in parser.parse_args().ownername
 # and not in parser.parse_args().username
-p.a('-u', '--username', metavar='PC OWNER NAME', dest='ownername', required=True)
+p.a('-u', '--username', metavar='OWNER NAME', dest='ownername', required=True)
 
 # only one option out of the two can be provided at time
 group = parser.add_mutually_exclusive_group()
@@ -56,5 +57,5 @@ group.add_argument('-v', '--verbose', action='count', default=0)
 group.add_argument('-q', '--quite')
 
 # e.g input
-parser.parse_args('filename -c 12 --files f1 f2 f3 -d sick -d boy -n 2 -vvvv'.split())
+parser.parse_args('filename -c 12 --files f1 f2 f3 -d sick -d boy -n 2 -vvvv --copy src1 dest1 --copy src2 dest2'.split())
 ```
