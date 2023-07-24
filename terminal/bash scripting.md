@@ -1,13 +1,23 @@
 # BASH
 
+- [BASH](#bash)
+  - [MISC](#misc)
+    - [Multi-line commenting](#multi-line-commenting)
+    - [heredoc](#heredoc)
+    - [Conditionals and Cases](#conditionals-and-cases)
+      - [`[ EXP ]`](#-exp-)
+      - [`[[EXP]]`](#exp)
+    - [Loops](#loops)
+    - [Arrays](#arrays)
+
 ## MISC
 
-- `type NAME` gives you type of NAME like built-in, function, etc
+- `type NAME` gives you type of NAME (like built-in, function, alias, etc)
 - `(())` enable you to omit dollar sign and allow you to include spaces around operators
 - `:(){ : | : & }; :` is fork bomb. DON'T EXECUTE IT
 
+### Multi-line commenting
 
-### Multi-line commenting:
 ```bash
 : '
 These are multi-line commenting.
@@ -16,10 +26,11 @@ You can add as many lines as you wish.
 ```
 
 ### heredoc
+
 ```bash
 cat << END
 You can output as many lines as you want.
-When you are done just type heredocdelimeter
+When you are done just type heredoc=delimiter
 END
 ```
 
@@ -27,7 +38,8 @@ END
 
 - `if` just checks the exit state of command
 
-#### [ EXP ]
+#### `[ EXP ]`
+
 - `[` is a file and synonym to `test` command. `]` is just arg for `]`
 - `man test` will give you great manual for this command
 - `! EXP` negates an exp
@@ -43,12 +55,14 @@ END
 if [ 3 -lt 4]; then ...
 if test 3 -lt 4; then ...
 ```
-#### [[ EXP ]]
 
-- Comparsion operators can be used without escaping
+#### `[[EXP]]`
+
+- Comparisons operators can be used without escaping
 - `-a` and `-o` are simple replaced by && and ||.
 - Grouping can be done without escaping
-- Supports regular exp as  `[[ STR =~ REG_EXP ]]`
+- Supports regular exp as `[[ STR =~ REG_EXP ]]`
+
 ```bash
 [ 2 -lt 5 -a 3 \> 0] && echo "true"
 [[ 2 < 5 && 3 > 5 ]] && echo "true"
@@ -96,3 +110,4 @@ echo ${pets[@]} # print all values
 for pet in ${pets[@]}; do ...
 # loop through indices of array
 for i in ${!pets[@]}; do ...
+```
