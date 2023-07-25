@@ -6,6 +6,8 @@
     - [User Management](#user-management)
     - [Group Management](#group-management)
   - [Permission Management](#permission-management)
+  - [stat command](#stat-command)
+    - [File Mode: Type and Permission](#file-mode-type-and-permission)
   - [Patch and Diff](#patch-and-diff)
     - [Basic Usage](#basic-usage)
     - [Diff](#diff)
@@ -93,6 +95,18 @@
   - 5: (4+1) read and execute
   - 6: (4+2) read and write
   - 7: (4+2+1) read, write and execute
+
+## stat command
+
+- `stat` command will give you lot of info about file status
+- `stat --printf '...'` you can provide a string for controlling what you want to see
+
+### File Mode: Type and Permission
+
+- File mode is stored in `st_mode`. It is an integer that contains file type (directory, socket, regular file, symbolic link, FIFO, so on) and access permissions (discussed above)
+- Two ways to access file type information from `st_mode`:
+  - Mask out the rest of things (permission part) and compare file type code alone. `S_IFMT` (FILE TYPE MASK) is a bit mask to mask out file type from `st_mode`
+  - Use predicate macro like `S_ISDIR(mode)`, `S_ISFILE(mode)`, etc.
 
 ## Patch and Diff
 
