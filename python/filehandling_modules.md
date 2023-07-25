@@ -160,7 +160,7 @@ make_archive(
 )
 
 # contents of above tar
-$ un-tar-me myarchive.tar
+$ un-tar-gime myarchive.tar
 structure/content/
 structure/content/please_add.txt
 #############################
