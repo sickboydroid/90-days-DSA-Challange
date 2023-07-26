@@ -5,6 +5,7 @@
     - [Lambda function](#lambda-function)
     - [True v/s False](#true-vs-false)
   - [in-built functions (useful ones)](#in-built-functions-useful-ones)
+  - [Glossary](#glossary)
 
 ## Misc
 
@@ -34,3 +35,17 @@
   - `list.sort(key=callabel, reverse=false)` method sorts list inplace
   - Callable is called on every element of iterable exactly once before making comparsion. Then the output of this callable is used to compare the elements of original iterable
 - `filter(func, iteratable)` will construct an iterator with elements for which func is true
+- `dir([object])`: Return list of names in current scope. With an argument, **attempts** to return a list of valid attributes for that object
+- **Attributes**:
+  - `hasattr(object, name)`: calls getattr(object, name) and sees if it raises an exception
+  - `getattr(object, name, default)`: name must be a string. e.g `getattr(x, 'foo')` will return `x.foo`
+  - `setattr(object, name, value)`: name must be a string. e.g `setattr(x, 'foo', 'bar')` is equivalent to `x.foo = 'bar'`
+  - NOTE: Name need not to be a python identifier and if it is not then you can excess it only via setattr(...) and getattr(...) and not using dot notation. e.g Name which is not a python identifier is **foo+\nbarr** (there is literally a line break in name)
+
+## Glossary
+
+1. **file-like object** or **file object**: Object exposing file-oriented API (with methods such as `read()` and `write()`)
+2. **path-like object**: `str/bytes` representing a path or an object implementing `os.PathLike` protocol
+3. **namespace**: In nutshell, it is a dictionary in which keys are names of object and values are the actual objects. Types: Local, global, built-in and nested namespaces
+   object
+   Any data with state (attributes or value) and defined behavior (methods). Also the ultimate base class of any new-style class.
