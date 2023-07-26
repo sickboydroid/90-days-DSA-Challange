@@ -12,3 +12,5 @@
 - [ ] Learn about os module
 - [ ] Learn about sys module
 - [ ] Mutable data types like [] as default arguments
+- [ ] BUG in pylance:
+  - Does not consider **name mangling** when using self keyword
