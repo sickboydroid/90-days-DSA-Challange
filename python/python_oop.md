@@ -7,6 +7,7 @@
   - [Instance Objects](#instance-objects)
   - [Public, Protected and Private Names](#public-protected-and-private-names)
   - [Extras](#extras)
+  - [Dataclasses](#dataclasses)
   - [Outside Doc (from corey)](#outside-doc-from-corey)
     - [`__dict__` and type of methods](#__dict__-and-type-of-methods)
     - [Dunder/Magic Methods](#dundermagic-methods)
@@ -127,6 +128,10 @@ Foo._Foo__bar_()     # in action
 - Python supports multiple inheritance i.e `DerivedClassName(Bas1, Base2, ...)`
 - You use `DerivedClassName(module.Base1, module.Base2,...)` as well
 - MRO is a little complex, ([See here](https://www.python.org/download/releases/2.3/mro/)). However in nutshell, MRO is depth-first, left-to-right, not searching twice in the same class (in case there is an overlap in hierarchy).
+
+## Dataclasses
+
+TODO
 
 ## Outside Doc (from corey)
 

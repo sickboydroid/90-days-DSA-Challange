@@ -1,6 +1,4 @@
-# Parsing Command Line Arguments
-
-## argparse module
+# argparse (for command line arguments)
 
 - `cp -r SRC DEST`: **-r** is optional argument while as **SRC** and **DEST** are positional arguments
 - `add_argument(...)` method is used to add command-line options

@@ -1,6 +1,6 @@
-# Python Data types
+# Python Data Structures
 
-- [Python Data types](#python-data-types)
+- [Python Data Structures](#python-data-structures)
   - [Misc](#misc)
   - [Lists](#lists)
   - [Tuple](#tuple)
@@ -11,11 +11,18 @@
   - [Collection module](#collection-module)
     - [deque](#deque)
     - [namedtuple](#namedtuple)
+  - [Sequence Types](#sequence-types)
 
 ## Misc
 
 1. `sys.getsizeof(...)` will give the space occupied by the data type in **bytes**
 2. `timeit.timeit(stmt="<stmt>", number=<num>)` will repeat/run _stmt_ _num_ number of times and give the time taken by it to execute
+3. **Notes**:
+   - Since -0 = 0, negative indexing starts with -1. In nutshell, negative index **i** is substituted with `len(seq) + i`
+   - Slick of **seq** from **i** to **j** never includes **j**. If **j >= len(seq)** then **len(seq)** is used instead of **j**
+   - Concatenating immutable sequences is very expensive:
+     1. You can **list** as substitution for **StringBuilder** and use **str.join()** at the end to get string
+     2. Instead of concatenating **tuples**, extend **list** instead
 
 ## Lists
 
@@ -203,19 +210,15 @@ type            ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" |
 ```
 
 ```python
-############
 # Docstrings
-############
 myStr = """Hello! \
 My name is sickboy.
 And I am learning python.
 """
-# equivalent to
+# same as
 myStr = 'Hello, World! My name is sickboy.\nAnd I am learning python.'
 
-############
 # Formatting
-############
 age = 17
 name = 'sickboy'
 score = [95, 96, 100]
@@ -274,4 +277,33 @@ name, *_ = emp # unpacking
 print(name)
 print(emp[0])
 print(emp.Name)
+```
+
+## Sequence Types
+
+- lists tuples and range objects
+- Operations implemented by both **mutable and immutable sequences:**
+  - `in`, `not in`, `+`, `*`,`indexing`, `slicing`, `len(seq)`, `min(seq)`, `max(seq)` `index(x[, i, [, j]])` and `count(x)`
+    - **seq \* n** equivalent to adding seq to itself n times
+      - Items are not copied but referenced multiple times (see first example)
+    - **seq.index(x, i=0, j=len(s)):** index of first occurrence of **x** in sequence seq after **i** and before **j**
+- Operations supported by only **immutable sequences:**
+  - `hash()`
+    - Thus you can use them as dict keys
+- Operations supported by only **mutable sequences:** (t is any iterable object)
+  - `seq[i] = x` replaces **ith** item by x
+  - `seq[i:j:k] = t` items are replaced
+    - if **t**'s length does not match the slice length, other items will be inserted or deleted accordingly
+    - In more general, above operation
+  - `del seq[i:j:k]` same as `seq[i:j:k] = []`
+  - `seq.append(x)` append element x to the end of seq
+  - `seq.extend(t)` or `seq += t` extends items of t
+  - `seq.insert(i,x)` or `seq[i:i] = x`, `seq.clear()`, `seq.copy()` or `seq[:]`, `seq.pop([i])`, `s.remove(x)`, `s.reverse()` (in-place) are some other operations
+- Sequence of same types support comparisons. Tuples and lists are compared lexicographically.
+
+```python
+# Example 1
+lists = [[1,2]]
+lists = lists * 3 # gives [[1,2], [1,2], [1,2]]
+lists[0].append(3) # gives [[1,2,3], [1,2,3], [1,2,3]]
 ```
