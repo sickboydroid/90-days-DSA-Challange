@@ -6,8 +6,8 @@
 ## TODOs
 
 - From roadmap.sh
-  - [ ] Paradigms, Type-casting, match-cass
-  - [ ] Dunder/magic methods
+  - [x] Paradigms, Type-casting, match-case
+  - [x] Dunder/magic methods
   - [ ] Pip basics
 - Modules on Queue:
   - [ ] os
@@ -22,13 +22,14 @@
   - [ ] time
 - [ ] Learn about OOP
   - [ ] Super keyword
-  - [ ] Dunder methods
-  - [ ] method class
+  - [x] Dunder methods
+  - [x] method class
   - [ ] data class
   - [ ] static method
   - [ ] setters and getters
 - [ ] Mutable data types like [] as default arguments
-- [ ] Python Environment: how? and why?
+- [x] Python Environment: how? and why?
 - [ ] Packing and Unpacking
-- [ ] BUG in pylance:
-  - Does not consider **name mangling** when using self keyword
+- [ ] BUGs:
+  - Pylance: Does not consider **name mangling** when using self keyword
+  - BeautifulSoup: Fix missing parent [Where is a?](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#next-sibling-and-previous-sibling)
