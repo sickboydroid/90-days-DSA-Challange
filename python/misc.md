@@ -7,6 +7,7 @@
   - [in-built functions (useful ones)](#in-built-functions-useful-ones)
   - [Glossary](#glossary)
   - [Structural Pattern Matching (match-case statement)](#structural-pattern-matching-match-case-statement)
+  - [Function Parameters](#function-parameters)
 
 ## Lambda function
 
@@ -111,4 +112,43 @@ match sub:
     # always matches but does not bind any vars.
     # It will match any object and not just sequences
     pass
+```
+
+## Function Parameters
+
+- Iterables can deliver positional arguments via `*iter` and dicts can deliver keyword arguments via `**name`
+- Non `**kwargs` should always be after positional arguments while defining functions as well as while calling them
+- Default value is evaluated only once while reading the definition of function (can cause unwanted behaviour with mutable objects)
+- **Order**:
+  - `*args`: will receive all positional arguments except the ones that are defined before it
+  - `**kwargs`: will contain all keyword arguments except the ones that are defined before it
+  - `**kwargs` must be before `*args`
+  - Only keyword-only arguments can be after `**args`
+- By default arguments are of type 'positional or keyword' and can be passed either by position or by explicitly by keyword
+- You can change this behaviour using as follows:
+  <pre>
+  def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+        -----------    ----------     ----------
+          |             |                  |
+          |        Positional or keyword   |
+          |             (default)          - Keyword only
+          -- Positional only
+  </pre>
+- For an API, it is suggested to use positional-only arguments
+- Arguments that are of type 'positional or keyword' cannot be passed to `**kwargs` i.e only the names of positional-only parameters can be used in `**kwargs` without ambiguity (see example below)
+
+```python
+# EXAMPLE: Only positional-only args can be in **kwds
+def foo(name, **kwds):
+  return 'name' in kwds # always false
+
+
+def bar(name, /, **kwds):
+  return 'name' in kwds # may or may not be true
+
+
+foo(name=12, **{'name':21}) # error: name was assigned multiple times
+foo(12, **{'name':21}) # error: //
+bar(name=13, **{'name':31}) # error: name is poitional-only argument
+bar(13, **{'name': 31}) # True
 ```
