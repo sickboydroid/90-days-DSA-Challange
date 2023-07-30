@@ -1,6 +1,7 @@
 # Python Misc
 
 - [Python Misc](#python-misc)
+  - [Misc](#misc)
   - [Lambda function](#lambda-function)
   - [True v/s False](#true-vs-false)
   - [Python interpreter](#python-interpreter)
@@ -8,6 +9,8 @@
   - [Glossary](#glossary)
   - [Structural Pattern Matching (match-case statement)](#structural-pattern-matching-match-case-statement)
   - [Function Parameters](#function-parameters)
+
+## Misc
 
 ## Lambda function
 
