@@ -1,6 +1,7 @@
 # DSA Log
 
 - [DSA Log](#dsa-log)
+  - [DAY 17 (30 JULY 2023)](#day-17-30-july-2023)
   - [DAY 16 (28 JUNE 2023)](#day-16-28-june-2023)
   - [DAY 15 (22 JUNE 2023)](#day-15-22-june-2023)
   - [DAY 14 (15 JUNE 2023)](#day-14-15-june-2023)
@@ -18,6 +19,14 @@
   - [DAY 3](#day-3)
   - [DAY 2](#day-2)
   - [DAY - 1](#day---1)
+
+## DAY 17 (30 JULY 2023)
+
+1. Holy shit! Why am i so afraid of books? I want to study but i am so afraid. I have to fix it
+2. I have learned python language (for the 3rd time i guess). But this time i really switched from java
+3. I kinda enjoy it but at the same time i miss java's `for` loop, its strictness and verboseness
+4. But development time has significantly reduced with python, i have to say that
+5. Now i am coming back to leetcode and this time with python
 
 ## DAY 16 (28 JUNE 2023)
 
@@ -56,7 +65,7 @@
 
 ## DAY 11 (23 MAR 2023)
 
-1. Phew! Ramadan has started. There are still more than hours left for iftar and I have already started to feel dizzy 
+1. Phew! Ramadan has started. There are still more than hours left for iftar and I have already started to feel dizzy
 2. Learning about Dynamic Programming
 3. However from past few days I haven't read that many pages of Algorithms Book.
    1. I found that the concepts and questions present in the book really help in DSA
