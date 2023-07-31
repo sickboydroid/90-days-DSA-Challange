@@ -12,6 +12,11 @@
 
 ## Misc
 
+- `and` operator returns the first **False** value it encounters or last **True** value
+  - Thus **False and "Cat" and "Mat"** is **False** and **True and "Cat" and "Mat"** is **"Mat"**
+- Similarly `or` logical operator returns the first **True** value.
+  - Thus **"Cat" and False** is **Cat**
+
 ## Lambda function
 
 - `lambda arg: exp` will create a function with no name and which takes an argument _arg_ and evalutes and returns value of _exp_
