@@ -8,6 +8,7 @@
 
 ### [Course Schedule](https://leetcode.com/problems/course-schedule/)
 
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
 - Cycle in graph indicates course can't be completed
 - Use three states for each course
   - 0: Not sure: I haven't started testing whether this course can be completed or not
@@ -17,6 +18,7 @@
 
 ### [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
 
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
 - **Question Things:**
 
   - Think in reverse, find all cells from pacific ocean from where rain water can enter in it. Since you are doing in reverse, you will move from a cell with LOWER height to a cell with HEIGHT height
@@ -35,3 +37,10 @@
       if 0 <= new_r < ROWS and 0 <= new_c < COLS:
         ...
     ```
+
+### [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- **Question Things:**
+  - Use set
+  - Iterate through the set and check if the current number is a start of sequence (i.e there is no other number 1 smaller than it). If it is find the length of sequence (i.e biggest number in this seq)

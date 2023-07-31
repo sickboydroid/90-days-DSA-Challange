@@ -71,7 +71,7 @@ Logic: a^b^c^a^b is equal to c because XOR of same number gives zero and XOR of 
 
 Single non-repeating element in array
 
-Given an array with every element repeating exactly three times except one.  Find that non-repeating element.
+Given an array with every element repeating exactly three times except one. Find that non-repeating element.
 
 This element occurs exactly once
 
@@ -97,7 +97,7 @@ Return the element
 ## [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
 
 - Slow and fast pointer
-- dummy head keeps pointer n + *1* steps ahead of slow pointer
+- dummy head keeps pointer n + _1_ steps ahead of slow pointer
 
 ## [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 
@@ -141,6 +141,7 @@ if(y < Integer.MIN_VALUE / 10 || (y == Integer.MIN_VALUE && digit < Integer.MIN_
 ## [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 
 - ALWAYS REMEMBER, in binary search:
+
   - nums[lo] <= target <= nums[hi]
   - And all values outside this range ARE NOT TARGET
 
@@ -184,11 +185,11 @@ public int binarySearch(int[] nums, int target, boolean leftBias) {
 
 - Phew! I will take credit for solving at first try however i took some help from IDE and chatGPT
 - Finding grid (3x3) of cell.
-  - row = 3 * (rowCell/3)
-  - col = 3 * (colCell/3)
+  - row = 3 \* (rowCell/3)
+  - col = 3 \* (colCell/3)
   - It works because dividing rowCell by 3 will give us 0, 1 and 2 i.e either first 3 or 2nd 3 or 3rd 3 are the possible grids
     - Multiplying it by 3 will give the row of the first cells of these grids
-  - Same for second 
+  - Same for second
 
 ## [2220. Minimum Bit Flips to Convert Number](https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/)
 
@@ -254,7 +255,7 @@ class Solution {
         // we will call solve with solve(1, [], 0) and solve will do the same exact thing
         // as we did few lines above. Which will ultimately give duplicate solutions
         while(index + 1 < candidates.length && candidates[index] == candidates[index + 1])
-            index++;        
+            index++;
         solve(index + 1, cur, curSum); // exclude
     }
 }
@@ -298,7 +299,7 @@ class Solution {
 ## [50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/)
 
 - If `n is Integer.MIN_VALUE` then `-n` will also be `Integer.MIN_VALUE`. Handle this case.
-- *O(n)* is easy but *O(log2 n)* is a little bit tricky.
+- _O(n)_ is easy but _O(log2 n)_ is a little bit tricky.
   - HINT: Square **x** and half **n**
 
 ## [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/description/)
@@ -373,7 +374,7 @@ class Solution {
 ## [1161. Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/)
 
 - `bfs` used
-- Now i know two ways of know current level *(next question will give you another method)*. `Null in queue` and `nested while loop`. The 2nd one is faster and less error prone
+- Now i know two ways of know current level _(next question will give you another method)_. `Null in queue` and `nested while loop`. The 2nd one is faster and less error prone
 
 ```java
 // BFS via null
@@ -432,12 +433,12 @@ public void solve(TreeNode root, int level) {
 ## [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target)
 
 - Use dfs
-- Beats 26% when using **LinkedList** for path and beats 96% when using **ArrayList**. It is f**kin' ridiculous
+- Beats 26% when using **LinkedList** for path and beats 96% when using **ArrayList**. It is f\*\*kin' ridiculous
 - (tested in ide) Even if you add 10^7 elements and remove them using `ArrayList.remove(size()-1)` and `LinkedList.removeLast()`, still ArrayList is about 4 times faster.
 
 ## [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
 
-- Actual common uses **multi-source bfs** and recall that bfs requires *Queue* data structure
+- Actual common uses **multi-source bfs** and recall that bfs requires _Queue_ data structure
 - My first solution simulated everything without using extra space. The interesting part that according to leetcode both beat 87% which is strange because I guess my solution was going reiterating over same element a lot of times
 
 ## [200. Number of Islands](https://leetcode.com/problems/number-of-islands)
