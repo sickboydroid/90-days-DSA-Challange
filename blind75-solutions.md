@@ -44,3 +44,15 @@
 - **Question Things:**
   - Use set
   - Iterate through the set and check if the current number is a start of sequence (i.e there is no other number 1 smaller than it). If it is find the length of sequence (i.e biggest number in this seq)
+
+### [Coin Change](https://leetcode.com/problems/coin-change/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- **Question Things:**
+  - Solution exists in three methods:
+    1. Brute-force (don't submit)
+    2. Use memo (you can submit)
+    3. True/pure dp solution (no recursion)
+  - Brute-force solution was not that hard
+  - I still need to work with "what goes in memo as a key?"
+  - DP solution i literally copied and pasted. Do review dp notes again
