@@ -1,5 +1,7 @@
 # My DSA Journey
 
+## ON A BREAK FROM 01-AUG-2023
+
 ## MISC
 
 - I created this repo on Dec 29 2022

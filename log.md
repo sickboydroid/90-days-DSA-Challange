@@ -1,6 +1,10 @@
 # DSA Log
 
 - [DSA Log](#dsa-log)
+  - [MAJOR BREAK (DAY 18 (05 Aug 2023))](#major-break-day-18-05-aug-2023)
+    - [Some resources I was currently following:](#some-resources-i-was-currently-following)
+    - [Youtube playlists that I had saved](#youtube-playlists-that-i-had-saved)
+      - [Bookmarks that I deleted](#bookmarks-that-i-deleted)
   - [DAY 17 (30 JULY 2023)](#day-17-30-july-2023)
   - [DAY 16 (28 JUNE 2023)](#day-16-28-june-2023)
   - [DAY 15 (22 JUNE 2023)](#day-15-22-june-2023)
@@ -19,6 +23,59 @@
   - [DAY 3](#day-3)
   - [DAY 2](#day-2)
   - [DAY - 1](#day---1)
+
+## MAJOR BREAK (DAY 18 (05 Aug 2023))
+
+1. Okay i need to face it, Programming is eating up too much time. I have decided (4 days ago) that I will focus only on studies for now.
+2. I am in 12th right now and it is already august. My first attempt of JEE Mains is in January (only about 5 months left) and after that I have my 12th boards in April and even before these two I have Pre-Boards in September/October. That is why I am deciding to take a complete break from coding altogether
+3. I won't be making any commits to this repo (or any other repo for that matter), I won't be accepting any pull requests (which i have never received anyways) and I won't be making any pull requests
+4. It also means that I won't be doing any leetcode or moving further in python
+5. WHEN WILL BE I BACK?
+   - It depends, If my January attempt of JEE Mains got well and I didn't focus of Advance then may be (10% chance) I will be back by May (after boards). If it didn't go well then I will only be back after July when collage starts
+6. I am very excited for the upcoming journey and I am sure that I will miss coding a lot. But as the famous quote goes, "Kuch pane k liyay kuch khone bi padhta h".
+7. Right now I am thinking that I would have forgot most of the things that I learnt in programming (mostly syntax and apis). But I believe that core concepts of programming will stay with me and will help me during my collage days.
+8. I am also afraid of losing my typing speed. It took me only about 7 minutes to write all these things
+9. I hope when I restart my coding journey in collage, I will be happy about this decision
+10. So i think it is time to say goodbye
+11. Signing OFF, SICKBOY (PEACE)
+
+### Some resources I was currently following:
+
+### Youtube playlists that I had saved
+
+- [Python OOP](https://youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+- [Leetcode Medium Problems by NEETCODE](https://youtube.com/playlist?list=PLot-Xpze53lfOdF3KwpMSFEyfE77zIwiP)
+- [Matplotlib Python by Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_)
+- [Dynamic Programming I was taking when i quit coding](https://youtube.com/playlist?list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf)
+
+#### Bookmarks that I deleted
+
+- [GIT Leaning](https://learngitbranching.js.org/)
+- [Codepen for quickly testing CSS/JS/HTML](https://codepen.io/pen/)
+- [Graph DS practice sheet/ from ApnaCollage (java)](https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/publicFiles/Graph%20Data%20Structure.pdf)
+- [Blind75 on leetcode](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+  - [Better Blind75](https://www.techinterviewhandbook.org/grind75?weeks=26&hours=7)
+- [Official Python Tutorial](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+- [Python Glossary](https://docs.python.org/3/glossary.html#term-iterator)
+- [Typing practice](https://www.keybr.com/) and also [this one](https://www.livechat.com/typing-speed-test/#/)
+- [ASCII Table](https://www.asciitable.com/)
+- [Coding Interview University(by daniil)](https://github.com/sickboydroid/coding-interview-university)
+- [Pramp (coding interview practive)](https://www.pramp.com/dashboard#/)
+- [Big-O Cheatsheet](https://www.bigocheatsheet.com/)
+- [roadmap.sh](https://roadmap.sh/)
+- [Dalvik bytecode](https://source.android.com/docs/core/runtime/dalvik-bytecode)
+
+- Free Images and game assets
+  - [Free stock images](https://www.freeimages.com/)
+  - [Free game assets 1](https://www.kenney.nl/assets)
+  - [Free game assets 2](https://quaternius.com/)
+  - [Free game assets 3](https://devassets.com/)
+  - [Unity game assets](https://assetstore.unity.com/?utm_source=unity-hub&utm_medium=desktop-app)
+  -
+- Piracy
+  - [Pirate-bay](https://thepiratebay.org/index.html)
+  - [rutracker](http://rutracker.ru/index.php)
+  - [r/Piracy: Ocean of piracy websites (reddit)](https://www.reddit.com/r/Piracy/wiki/megathread/software/)
 
 ## DAY 17 (30 JULY 2023)
 
