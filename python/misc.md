@@ -16,6 +16,8 @@
   - Thus **False and "Cat" and "Mat"** is **False** and **True and "Cat" and "Mat"** is **"Mat"**
 - Similarly `or` logical operator returns the first **True** value.
   - Thus **"Cat" and False** is **Cat**
+- `lis = [0] * n` is much faster than `lis = [0 for i in range(n)]`
+  - However `lis = [None] * n` is not faster than `lis = [[] for i in range(n)]` because with former you have to check if the value you are accessing is None or not and thus becomes slower and increases complexity
 
 ## Lambda function
 

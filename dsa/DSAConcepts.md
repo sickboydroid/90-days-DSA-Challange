@@ -13,6 +13,9 @@
   - [DP](#dp)
     - [Memoization](#memoization)
     - [Bottom-up approach](#bottom-up-approach)
+    - [DP (incomplete-notes of )](#dp-incomplete-notes-of-)
+- [Dynamic Programming](#dynamic-programming)
+  - [How to identify a DP problem?](#how-to-identify-a-dp-problem)
     - [Tabulation](#tabulation)
   - [Greedy Algorithms](#greedy-algorithms)
 
@@ -75,18 +78,18 @@ intersection = Math.min(range1[1], range2[1]);
 ## Recursion
 
 1. Tradeoff: Calling method is slow than looping
-2. **Call Stack:** IT IS A *STACK*. Don't forget that
+2. **Call Stack:** IT IS A _STACK_. Don't forget that
 
 ### Structure of recursive function
 
 - Three Questions:
   1. **What is base case?**
-      - What will you pass the function so that it returns immediately? That should be your base case
-      - It should be such that you don't even do a single piece of work.
-        - e.g empty string, 0 length array
+     - What will you pass the function so that it returns immediately? That should be your base case
+     - It should be such that you don't even do a single piece of work.
+       - e.g empty string, 0 length array
   2. **What is smallest amount of work u can do in the problem?**
   3. **With every function call, make sure to shrink the input**
-- Five Questions (Based on finding sum of first *n* natural numbers):
+- Five Questions (Based on finding sum of first _n_ natural numbers):
   1. Find base case
   2. Play around around examples and visualize
   3. Relate hard cases with simpler cases
@@ -115,9 +118,9 @@ Dynamic programming is a technique for solving problems.
 In any dynamic programming problem, what's important is that our problem must be **breakable** into smaller subproblems and also, these subproblems show some sort of **overlap** which we can save upon by **caching** or **memoization**.
 Three steps:
 
-   1. **Recursion:** Solve with recursion
-   2. **Memoization:** Store values if too much recursion
-   3. **Bottom-up:** Remove recursion
+1.  **Recursion:** Solve with recursion
+2.  **Memoization:** Store values if too much recursion
+3.  **Bottom-up:** Remove recursion
 
 DP -> Recursion + Memo + Guessing
 
@@ -151,31 +154,32 @@ function(a, b, c) {
 }
 ```
 
-> time = sub-problems * (time/subproblem)
+> time = sub-problems \* (time/subproblem)
 > Don't count memoized recursive calls
 
 - Memoization recipe:
-    1. Make it work
-       1. Visualize problem as a tree (break large problem into smaller ones)
-          - Tree nodes (circles) represent input or the input that is changing over time  and line may be output
-       2. Implement tree into recursive code
-          - Leaf nodes are base cases
-       3. Test it (it can be slow but should be working)
-    2. Make it efficient
-       1. Add a memo object
-          - **Keys** represent arguments of function
-          - **Values** represent return values of function
-       2. Add a base case for memo object
-       3. Implement memo storing logic i.e store return value
+
+  1. Make it work
+     1. Visualize problem as a tree (break large problem into smaller ones)
+        - Tree nodes (circles) represent input or the input that is changing over time and line may be output
+     2. Implement tree into recursive code
+        - Leaf nodes are base cases
+     3. Test it (it can be slow but should be working)
+  2. Make it efficient
+     1. Add a memo object
+        - **Keys** represent arguments of function
+        - **Values** represent return values of function
+     2. Add a base case for memo object
+     3. Implement memo storing logic i.e store return value
 
 - Calculating time complexity and space complexity of recursive solution (without memo)
   1. For **Binary Tree**:
      - Time complexity: **O(2^h^</sup>)** where **h** is its height or number of levels
      - Space Complexity: **O(h)**. It is the space for stack of method calls
   2. For other, here are some tips:
-        - Height: What is the maximum number of 
-        - steps/levels before reaching to base case
-          - Pick on branch and follow it to the end
+     - Height: What is the maximum number of
+     - steps/levels before reaching to base case
+       - Pick on branch and follow it to the end
 
 ### Bottom-up approach
 
@@ -204,22 +208,64 @@ public static int fib(int n) {
 }
 ```
 
+### DP (incomplete-notes of )
+
+# Dynamic Programming
+
+- Method that can be used to solve some problems with specific characteristics
+
+  - Solves problems which take exponential time in polynomial time.
+  - It is an optimization technique. Some times it reduces time complexity to linear time
+
+- **Characteristics of DP problems**:
+  1. **Optimal substructure:** i.e a problem can solved optimally if you solve its sub-structure optimally
+  2. **Overalapping Subproblems:** for example in calculating fib(5) we need fib(4) and fib(3) but for f(4) we need fib(3) again (overlap)
+
+## How to identify a DP problem?
+
+DP problems can be classified into two major categories:
+
+1. **Combinatoric Problems:** How many ...?
+2. **Optimization Problems:** Maximizes or minimizes some function
+
+- Basic Procedure:
+  - Solve simplest problem
+  - Solve for 2 to 3 problems that use the previous result
+  - Devise general formula
+- Core idea of dp is to not recalculate things but to rely on the results of previous subproblem
+  - This is called **memoization**
+- Define the objective of function (50% of work).
+- Identify base case(s)
+- Find recurrence relation (relation that helps you use previous results to get new result)
+- Order of computation (bottom-up or top-down)
+- Location of the answer (usually f(n) but may be f(0) or some other thing as well)
+
+```python
+# e.g of adding natural numbers
+f(0) = 0         # manually calculated (base case)
+f(1) = f(0) + 1  # use pre result
+f(2) = f(1) + 2  # use pre result
+f(3) = f(2) + 3  # ...
+f(4) = f(3) + 4  # ...
+...
+f(n) = f(n-1) + n # Recurrence relation: sum of n numbers = sum of n-1 numbers + the number itself
+```
+
 ### Tabulation
 
 - Can you visualize the tabulation as a binary tree for fib?
 - Initialize the base case in the table.
-- Sure, here are some dynamic programming problems that are of moderate difficulty and can be solved using a tabulated approach:
+- Here are some dynamic programming problems that are of moderate difficulty and can be solved using a tabulated approach:
 
-1. Climbing Stairs: https://leetcode.com/problems/climbing-stairs/
-1. Unique Paths: https://leetcode.com/problems/unique-paths/
-1. Minimum Path Sum: https://leetcode.com/problems/minimum-path-sum/
-1. Longest Increasing Subsequence: https://leetcode.com/problems/longest-increasing-subsequence/
-1. Decode Ways: https://leetcode.com/problems/decode-ways/
-1. Coin Change: https://leetcode.com/problems/coin-change/
-1. Maximum Subarray: https://leetcode.com/problems/maximum-subarray/
-1. Palindromic Substrings: https://leetcode.com/problems/palindromic-substrings/
+1. [Climbing Stairs:](https://leetcode.com/problems/climbing-stairs/)
+1. [Unique Paths:](https://leetcode.com/problems/unique-paths/)
+1. [Minimum PathSum](http://leetcode.com/problems/minimum-path-sum/)
+1. [Longest Increasing Subsequence](http://leetcode.com/problems/longest-increasing-subsequence/)
+1. [Decode Ways](https://leetcode.com/problems/decode-ways/)
+1. [Coin Change](https://leetcode.com/problems/coin-change/)
+1. [Maximum Sub-array](https://leetcode.com/problems/maximum-subarray/)
+1. [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
 
 ## Greedy Algorithms
 
 - A greedy algorithm makes the best available choice at each step, without considering the future implications of that choice. It aims to achieve a globally optimal solution by locally optimizing at each step.
-  
