@@ -6,16 +6,28 @@
 - New things you learnt
 - Time and space complexity
 
-Tips:
-
-1. Whenever creating if-else or for-while, start with `{}` (typing++)
-
 ## Contents
 
 - [Leetcode Log](#leetcode-log)
   - [Contents](#contents)
   - [Worthy mentions (not from leetcode)](#worthy-mentions-not-from-leetcode)
     - [Single non-repeating element in array](#single-non-repeating-element-in-array)
+  - [Blind75](#blind75)
+    - [Problems List](#problems-list)
+      - [Array](#array)
+      - [Binary](#binary)
+      - [Dynamic Programming](#dynamic-programming)
+      - [Graph](#graph)
+      - [Interval](#interval)
+      - [Linked List](#linked-list)
+      - [Matrix](#matrix)
+      - [String](#string)
+      - [Tree](#tree)
+      - [Heap](#heap)
+  - [207. Course Schedule](#207-course-schedule)
+  - [417. Pacific Atlantic Water Flow](#417-pacific-atlantic-water-flow)
+  - [128. Longest Consecutive Sequence](#128-longest-consecutive-sequence)
+  - [322. Coin Change](#322-coin-change)
   - [8. String to Integer (atoi)](#8-string-to-integer-atoi)
   - [19. Remove Nth Node From End of List](#19-remove-nth-node-from-end-of-list)
   - [3. Longest Substring Without Repeating Characters](#3-longest-substring-without-repeating-characters)
@@ -48,6 +60,7 @@ Tips:
   - [797. All Paths From Source to Target](#797-all-paths-from-source-to-target)
   - [994. Rotting Oranges](#994-rotting-oranges)
   - [200. Number of Islands](#200-number-of-islands)
+  - [72. Edit Distance](#72-edit-distance)
 
 ## Worthy mentions (not from leetcode)
 
@@ -87,6 +100,167 @@ Return the element
 * Generate your number from them
 */
 ```
+
+## Blind75
+
+### Problems List
+
+#### Array
+
+- [x] [Two Sum](https://leetcode.com/problems/two-sum/)
+- [x] [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [x] [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [x] [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [x] [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- [x] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+- [x] [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [x] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [x] [3 Sum](https://leetcode.com/problems/3sum/)
+- [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+
+#### Binary
+
+- [x] [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+- [x] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [x] [Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [x] [Missing Number](https://leetcode.com/problems/missing-number/)
+- [x] [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+
+#### Dynamic Programming
+
+- [x] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [x] [Coin Change](https://leetcode.com/problems/coin-change/)
+- [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+- [x] [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+- [x] [Word Break Problem](https://leetcode.com/problems/word-break/)
+- [ ] [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
+- [x] [House Robber](https://leetcode.com/problems/house-robber/)
+- [x] [House Robber II](https://leetcode.com/problems/house-robber-ii/)
+- [ ] [Decode Ways](https://leetcode.com/problems/decode-ways/)
+- [x] [Unique Paths](https://leetcode.com/problems/unique-paths/)
+- [x] [Jump Game](https://leetcode.com/problems/jump-game/)
+
+#### Graph
+
+- [x] [Clone Graph](https://leetcode.com/problems/clone-graph/)
+- [x] [Course Schedule](https://leetcode.com/problems/course-schedule/)
+- [x] [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+- [x] [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [x] [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+- [ ] [Alien Dictionary (Leetcode Premium)](https://leetcode.com/problems/alien-dictionary/)
+- [ ] [Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
+- [ ] [Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
+
+#### Interval
+
+- [ ] [Insert Interval](https://leetcode.com/problems/insert-interval/)
+- [ ] [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+- [ ] [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+- [ ] [Meeting Rooms (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms/)
+- [ ] [Meeting Rooms II (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms-ii/)
+
+#### Linked List
+
+- [ ] [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [ ] [Detect Cycle in a Linked List](https://leetcode.com/problems/linked-list-cycle/)
+- [ ] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+- [ ] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [ ] [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+- [ ] [Reorder List](https://leetcode.com/problems/reorder-list/)
+
+#### Matrix
+
+- [ ] [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
+- [ ] [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- [ ] [Rotate Image](https://leetcode.com/problems/rotate-image/)
+- [ ] [Word Search](https://leetcode.com/problems/word-search/)
+
+#### String
+
+- [ ] [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [ ] [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+- [ ] [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+- [ ] [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+- [ ] [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+- [ ] [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [ ] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [ ] [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+- [ ] [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+- [ ] [Encode and Decode Strings (Leetcode Premium)](https://leetcode.com/problems/encode-and-decode-strings/)
+
+#### Tree
+
+- [ ] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [ ] [Same Tree](https://leetcode.com/problems/same-tree/)
+- [ ] [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+- [ ] [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- [ ] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [ ] [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+- [ ] [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
+- [ ] [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [ ] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- [ ] [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+- [ ] [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+- [ ] [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+- [ ] [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
+- [ ] [Word Search II](https://leetcode.com/problems/word-search-ii/)
+
+#### Heap
+
+- [ ] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [x] [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
+- [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+
+## [207. Course Schedule](https://leetcode.com/problems/course-schedule/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- Cycle in graph indicates course can't be completed
+- Use three states for each course
+  - 0: Not sure: I haven't started testing whether this course can be completed or not
+  - 1: Testing: Currently i am walking through the portion of graph of which this is part.
+    - If you encounter course with 1, there is a cycle
+  - -1: Completed: Course that has been completed so any course whose prerequisite is this can also be completed
+
+## [417. Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- **Question Things:**
+
+  - Think in reverse, find all cells from pacific ocean from where rain water can enter in it. Since you are doing in reverse, you will move from a cell with LOWER height to a cell with HEIGHT height
+  - Do same for other ocean
+  - Take intersection of cells of both ocean to get your answer
+
+- **Python things:**
+
+  - `0 <= x < K` is correct python syntax ($#!t)
+  - For moving to adjacent cells use following:
+
+    ```python
+    directions = ((0, 1), (1, 0), (0, -1), (-1, 0))
+    for dr, dc in directions:
+      new_r, new_c = r + dr, c + dc
+      if 0 <= new_r < ROWS and 0 <= new_c < COLS:
+        ...
+    ```
+
+## [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- **Question Things:**
+  - Use set
+  - Iterate through the set and check if the current number is a start of sequence (i.e there is no other number 1 smaller than it). If it is find the length of sequence (i.e biggest number in this seq)
+
+## [322. Coin Change](https://leetcode.com/problems/coin-change/)
+
+- <b style='color: black; background-color: #FDFF32; padding: 3px; border: 4px solid tomato;'>REWISE: 0</b>
+- **Question Things:**
+  - Solution exists in three methods:
+    1. Brute-force (don't submit)
+    2. Use memo (you can submit)
+    3. True/pure dp solution (no recursion)
+  - Brute-force solution was not that hard
+  - I still need to work with "what goes in memo as a key?"
+  - DP solution i literally copied and pasted. Do review dp notes again
 
 ## [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/)
 
@@ -444,3 +618,138 @@ public void solve(TreeNode root, int level) {
 ## [200. Number of Islands](https://leetcode.com/problems/number-of-islands)
 
 - Easy but neat thing is that you can solve it using both bfs and dfs
+
+## [72. Edit Distance](https://leetcode.com/problems/edit-distance)
+
+- Solution 1: It is self explanatory. We check every possible combination and pick out the one that takes min operations. Notice if two letters are same then we are skipping that.
+
+```java
+class Solution {
+    public int minDistance(String word1, String word2) {
+        return solve(word1, word2, 0, 0);
+    }
+
+    public int solve(String word1, String word2, int i1, int i2) {
+        if(i1 == word1.length())
+            return word2.length() - i2;
+        if(i2 == word2.length())
+            return word1.length() - i1;
+        if(word1.charAt(i1) == word2.charAt(i2))
+            return solve(word1, word2, i1 + 1, i2 + 1);
+        return 1 + min(
+            solve(word1, word2, i1, i2 + 1), // insert
+            solve(word1, word2, i1 + 1, i2), // delete
+            solve(word1, word2, i1 + 1, i2 + 1) // replace
+        );
+    }
+
+    public int min(int... nums) {
+        return Math.min(nums[0], Math.min(nums[1], nums[2]));
+    }
+}
+```
+
+- Solution 2: Improvement can be done by using DP i.e saving the solution of subproblems for future use. Notice "key" of map should be that value which makes that method call unique. Here word1 and word2 are shared by all method calls but i1 and i2 make each call unique
+
+```java
+class Solution {
+    public int minDistance(String word1, String word2) {
+        return solve(word1, word2, 0, 0);
+    }
+    HashMap<String, Integer> map = new HashMap<String, Integer>();
+    public int solve(String word1, String word2, int i1, int i2) {
+        String key = STR."\{i1}, \{i2}";
+        Integer res = null;
+        if((res = map.get(key)) != null)
+            return res;
+        else if(i1 == word1.length())
+            res = word2.length() - i2;
+        else if(i2 == word2.length())
+            res = word1.length() - i1;
+        else if(word1.charAt(i1) == word2.charAt(i2))
+            res = solve(word1, word2, i1 + 1, i2 + 1);
+        else
+            res =  1 + min(
+                solve(word1, word2, i1, i2 + 1), // insert
+                solve(word1, word2, i1 + 1, i2), // delete
+                solve(word1, word2, i1 + 1, i2 + 1) // replace
+            );
+        map.put(key, res);
+        return res;
+    }
+
+    public int min(int... nums) {
+        return Math.min(nums[0], Math.min(nums[1], nums[2]));
+    }
+}
+```
+
+- Solution 3: Observe that i1 in HashMap is from [0, word1.length()] and i2 is [0, word2.length()] thus we can use a simple 2D array to hold the values
+
+```java
+class Solution {
+    public int minDistance(String word1, String word2) {
+        this.map = new int[word1.length()+1][word2.length()+1];
+        for(int i = 0; i < map.length; i++)
+            for(int j = 0; j < map[i].length; j++)
+                map[i][j] = -1;
+        return solve(word1, word2, 0, 0);
+    }
+    int[][] map;
+    public int solve(String word1, String word2, int i1, int i2) {
+        int res = map[i1][i2];
+        if(res != -1)
+            return res;
+        else if(i1 == word1.length())
+            res = word2.length() - i2;
+        else if(i2 == word2.length())
+            res = word1.length() - i1;
+        else if(word1.charAt(i1) == word2.charAt(i2))
+            res = solve(word1, word2, i1 + 1, i2 + 1);
+        else
+            res =  1 + min(
+                solve(word1, word2, i1, i2 + 1), // insert
+                solve(word1, word2, i1 + 1, i2), // delete
+                solve(word1, word2, i1 + 1, i2 + 1) // replace
+            );
+        map[i1][i2] = res;
+        return res;
+    }
+
+    public int min(int... nums) {
+        return Math.min(nums[0], Math.min(nums[1], nums[2]));
+    }
+}
+```
+
+- Solution 4: So far we have use top-down recursive approach. Now we will be using bottom-up iterative approach. Time Complexity and space complexity (assuming you ignore the recursive calls where we have already memoized solutions) of both will be same but we will be saving overhead of method calls.
+
+```java
+class Solution {
+  public int minDistance(String word1, String word2) {
+      int m = word1.length(), n = word2.length();
+      int[][] dp = new int[m + 1][n + 1];
+      for(int r = 0; r < m + 1; r++)
+          dp[r][0] = r;
+      for(int c = 0; c < n + 1; c++)
+          dp[0][c] = c;
+      for(int r = 1; r < m + 1; r++) {
+          for(int c = 1; c < n + 1; c++) {
+              if(word1.charAt(r-1) == word2.charAt(c-1))
+                  dp[r][c] = dp[r-1][c-1];
+              else
+                  dp[r][c] = 1 + min(
+                                      dp[r-1][c-1],
+                                      dp[r-1][c],
+                                      dp[r][c-1]
+                                  );
+          }
+      }
+      return dp[m][n];
+  }
+
+  public int min(int... nums) {
+      return Math.min(nums[0], Math.min(nums[1], nums[2]));
+  }
+}
+```

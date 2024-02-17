@@ -42,7 +42,7 @@ Ways to sync clocks:
 
 Data is shared b/w two computers connected at the two ends of an ethernet cable or fibre optic cable.
 
-**How does the receiver know the byte boundry?** *Framing* is the answer.
+**How does the receiver know the byte boundry?** _Framing_ is the answer.
 
 #### HDLC Framing Format
 
@@ -51,10 +51,14 @@ In HDLC (High Level Data Link Control) protocol we use **0111110** as a flag to 
 If the actual data contains five 1's in consecutive, **bit stuffing** is performed. So in order to prevent the receiver from mistakingly mis-interpretting the data as flag, 0 is inserted after the four 1's and the receiver is expected to ignore it
 
 > Ethernet has a different mechanism. **Inter-frame gap (IFG)** is a gap when there is no data sent (0V in case of wire) and then it sends **Preamble** which is a 56 bits long alternating 0's and 1's.
+
     - Something like this: -------[IFG]--------1010101010...101011
     - The last 11 informs the receiver that after this 11 the upcoming bit is data
+
 > Large frames mean efficiency but if receiver misreads some byte then it will misread everything after that until new frame starts.
 > Ethernet Frame sizes vary from **64-1500 bytes** usually.
+
+![HDLC Framing Format](assets/hdlc%20framing%20format.png)
 
 #### PPP (Point-to-Point) Framing Format
 
@@ -64,10 +68,11 @@ We don't need address field as it Point-to-Point data link. So mostly address is
 
 Also control has no use and set to 0x03
 
-Protocol, Payload, and FCS  are equivalent to Ether Type, Payload and Frame Check Seq of ethernet
+Protocol, Payload, and FCS are equivalent to Ether Type, Payload and Frame Check Seq of ethernet
 
 <!-- TODO: Add image of PPP format -->
-![PPP format](assets/)
+
+![PPP format](assets/ppp.png)
 
 ---
 
@@ -76,7 +81,6 @@ Protocol, Payload, and FCS  are equivalent to Ether Type, Payload and Frame Chec
 #### Ethernet Framing Format for Multipoint Data Links
 
 For example multiple computers connected via radio waves or ethernet cable
-
 
 - Ethernet/MAC addresses are builtin in all Ethernet interfaces
 - **Source addr** and **Dest addr** hold MAC addr of sender and receiver respectively
@@ -100,7 +104,7 @@ Routers receive packets at each of their interefaces and make a dicession of whe
 
 The process of building that table is called **Routing** and the process of using this table to forward the packets is called **Forwarding**
 
-Instead of actual IP's, the router stores ranges of IP's to improve effeciency. For example
+Instead of actual IP's, the router stores ranges of IP's to improve efficiency. For example
 
     - There is something like 172.8 / 16 > 88.112.32.2 (Kashmir) in routing table
     - This means that if dest ip addr of packet's first 16 bits match to 172.8 then forward it to Kashmir router with IP 88.112.32.2
@@ -119,7 +123,7 @@ When we want to send a packet to a computer which is not on the same LAN, we sen
 ---
 
 - How does sender know which host he needs to send?
-When a sender wants to send a particular packet to some computer it first checks if the computer is on the same network by looking at the receiving IP addr and subnet mask.
+  When a sender wants to send a particular packet to some computer it first checks if the computer is on the same network by looking at the receiving IP addr and subnet mask.
 
 If the computer is not on the same network then it sends a request asking who has IP addr xxx.xx.xx.xx (ip addr of router). The dest mac addr of this req is broadcast addr or fffffffffff and all computers look at the request but only router responds with its mac addr because it has the given IP addr.
 
@@ -129,15 +133,15 @@ For this request we use `ARP (Address Resolution Protocol)` (code 0806). So the 
 
 First four slots are almost always by the same values.
 
-  1. **HW Addr Type**: Which hardware addr are you req? MAC addr
-  2. **Protocol Addr Type**: Which protocol addr are you req? IP addr
-  3. **HW Address Len**: Length HW addr
-  4. **Protocol addr Len**: Length of protocol addr
-  5. **OP Code**: Which operation? 1 for req and 2 for ans
-  6. **Hardware Addr of sender**: Mac addr of req
-  7. **Protocol Addr of sender**: IP addr of sender
-  8. **Hardware Addr of Target**: 000000000 (as it is request)
-  9. **Protocol addr of Target**: IP addr of router
+1. **HW Addr Type**: Which hardware addr are you req? MAC addr
+2. **Protocol Addr Type**: Which protocol addr are you req? IP addr
+3. **HW Address Len**: Length HW addr
+4. **Protocol addr Len**: Length of protocol addr
+5. **OP Code**: Which operation? 1 for req and 2 for ans
+6. **Hardware Addr of sender**: Mac addr of req
+7. **Protocol Addr of sender**: IP addr of sender
+8. **Hardware Addr of Target**: 000000000 (as it is request)
+9. **Protocol addr of Target**: IP addr of router
 
 Respond of router is also a ARP answer with its MAC addr as HW addr
 
@@ -156,6 +160,7 @@ Now in IP Packet there is IP Header and IP Payload. When using ping this IP Payl
 This is called Encapsitlation. Ethernate frame encapsilates IP Packet which encapsilates ICMP Message and so on.
 
 IP Packet Structure:
+
 - **Options** is almost never used and thus IHL (IP Header Len) is almost always 5
 - **Type Of Service** is used to prioritize the traffic (Not used mostly except in intercommunication b/w routers)
 - **Time To Live** is an 1 byte number that is set by the sender and each router decrements it by 1. If it becomes 0, packet is discarded.
@@ -168,10 +173,11 @@ IP Packet Structure:
 ![Packet Encapsilation](assets/encapsilation_of_protocols.png)
 
 Working of routing table:
+
 - **\>** indicates the next router where router has to send its packet based on the dest ip addr
 - **metric #** is the number of hops to reach to dest ip addr. It kind of tells the distance from the target machine
 - **[Direct]** means that the router is directly connected to the ethernet of the target computer. There is no remaining router b/w this router and target computer.
--  **em2.0** means forward the message through interface 2 of router
+- **em2.0** means forward the message through interface 2 of router
 
 ## TCP
 
@@ -180,16 +186,18 @@ There is a limitation in how much data can be sent (~1500 bytes) in a single pac
 So we split out data in multiple packets.
 
 Challenges with splitting into packets
-  1. **Packet Loss**
-  2. **Retransmition**: e.g incase recevier didn't receive any packet
-  3. **Reordering**
-  4. **Multiple conversations**: e.g while sending multiple files
-  5. **Control flow**: e.g when one computer sends packets at faster rate than the receving computer can handle.
+
+1. **Packet Loss**
+2. **Retransmition**: e.g incase recevier didn't receive any packet
+3. **Reordering**
+4. **Multiple conversations**: e.g while sending multiple files
+5. **Control flow**: e.g when one computer sends packets at faster rate than the receving computer can handle.
 
 TCP solves all the above problems by providing **Byte Stream Service** which is connection oriented and reliable.
-  - **Connection Oriented** means that before even sending data, both computers establish a connection. Just like a phone call
-  - **Byte Stream Service** means that once the connection is established the sender sends just throws up the bytes it wants to send and tcp handles all the packeting and stuff. Sender at this point just assumes that the bytes will appear at the other computer.
-  - It is **reliable** by sending and ACK packet to the sender when receiver successfully receives data.
+
+- **Connection Oriented** means that before even sending data, both computers establish a connection. Just like a phone call
+- **Byte Stream Service** means that once the connection is established the sender sends just throws up the bytes it wants to send and tcp handles all the packeting and stuff. Sender at this point just assumes that the bytes will appear at the other computer.
+- It is **reliable** by sending and ACK packet to the sender when receiver successfully receives data.
 
 > 6 is the protocol number for tcp
 
@@ -205,11 +213,10 @@ TCP Header:
 
 ![TCP Header](assets/tcp.png)
 
-
 > Client: Computer that is connecting to another computer
 > Server: Comptuer that client is connected to
 > Once the connection is established, there is no server and client because both can send and receive data
- 
+
 ### Connection example
 
 What are we going to do?
@@ -219,12 +226,12 @@ Client connects to server. When it connects to server at port 13, server is prog
 **CONNECTION ESTABLISHMENT**:
 
 1. Client sends the tcp packet with random seq number.
- 
-  - To inform that this packet is for establishing connection, client sets the SYN bit (Synchronize bit). TCP has different flag bits for different things.
-  - For simplicity, lets say seq number was 0. So the client is expecting 0th byte from server.
+
+- To inform that this packet is for establishing connection, client sets the SYN bit (Synchronize bit). TCP has different flag bits for different things.
+- For simplicity, lets say seq number was 0. So the client is expecting 0th byte from server.
 
 2. Server responses with ACK bit set with ack number as 1. That is the server has received 0th byte of data and expecting 1st byte of data from the client (It has incremented the seq number sent by client).
-   
+
    - In the same packet, server sets SYN bit and picks a random seq number (say 0). That is server is sending the 0th byte of data
 
 3. Client responses with ACK bit set and both ack and seq number are set to 1. So client is saying that it has received 0th byte and is expecting 1st byte and also it is sending 1st byte as requested.

@@ -6,17 +6,17 @@
 
 - I created this repo on Dec 29 2022
 - Quickly Jump to:
-  - [Leetcode Log](leetcode.md)
   - [Git](misc/git.md)
   - [SSH](misc/ssh.md)
-  - [Java](dsa/JavaConcepts.md)
-  - [Python](python/readme.md)
+  - [Java](programming-languages/java/MIsc.md)
+  - [Python](programming-languages/python/readme.md)
   - [DSA Notes](dsa/)
-  - [DSA Log](dsa-log.md)
+  - [DSA Log](log.md)
+  - [Leetcode Log](leetcode.md)
   - [Leetcode Log](leetcode.md)
   - [Markdown cheatsheet](misc/markdown%20cheatsheet.jpeg)
-  - [Algorithms Sedgewick (Book Notes)](dsa/algos-book/)
 
 ## Resources
 
-- Learn git: [Click here](https://learngitbranching.js.org/)
+- [Learning git visually](https://learngitbranching.js.org/)
+- [Learning graphs visually](https://d3gt.com/)

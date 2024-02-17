@@ -1,5 +1,12 @@
 # Algos
 
+- [Algos](#algos)
+  - [Boyer-Moore Voting Algorithm](#boyer-moore-voting-algorithm)
+  - [Sieve of Eratosthenes (For primes)](#sieve-of-eratosthenes-for-primes)
+  - [Pascal's triangle](#pascals-triangle)
+  - [Reversing Singly Linked List](#reversing-singly-linked-list)
+  - [Num to Binary String](#num-to-binary-string)
+
 ## Boyer-Moore Voting Algorithm
 
 - Majority element is element which occures more than n/2 times in array

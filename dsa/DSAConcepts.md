@@ -13,11 +13,28 @@
   - [DP](#dp)
     - [Memoization](#memoization)
     - [Bottom-up approach](#bottom-up-approach)
-    - [DP (incomplete-notes of )](#dp-incomplete-notes-of-)
-- [Dynamic Programming](#dynamic-programming)
+      - [Tips for converting solution from recursive to bottom-up](#tips-for-converting-solution-from-recursive-to-bottom-up)
+      - [When is it 1D and 2D DP problem?](#when-is-it-1d-and-2d-dp-problem)
+  - [Dynamic Programming](#dynamic-programming)
   - [How to identify a DP problem?](#how-to-identify-a-dp-problem)
     - [Tabulation](#tabulation)
   - [Greedy Algorithms](#greedy-algorithms)
+  - [Trie](#trie)
+  - [Priority Queue](#priority-queue)
+    - [Heap](#heap)
+    - [Binary Heaps](#binary-heaps)
+      - [Binary Heap Properties](#binary-heap-properties)
+      - [Heap Operations](#heap-operations)
+    - [Heap Sort](#heap-sort)
+  - [Symbol Table](#symbol-table)
+    - [Elementary Implementations of symbol table](#elementary-implementations-of-symbol-table)
+      - [LinkedList](#linkedlist)
+      - [Ordered Symbol Table](#ordered-symbol-table)
+    - [Efficient Implementations](#efficient-implementations)
+      - [Binary Search Trees](#binary-search-trees)
+        - [Ordered Symbol Table Opts using BST](#ordered-symbol-table-opts-using-bst)
+        - [Deletion cost (BST)](#deletion-cost-bst)
+  - [Merge Sort](#merge-sort)
 
 ## Time complexity
 
@@ -57,8 +74,11 @@ intersection = Math.min(range1[1], range2[1]);
 
 1. You can start from any vertex
 2. While exploring vertex, you can visit adjacent vertex in any order
-3. `RULE1`: While exploring vertex, visit all its adjacent vertices then only you can move to next vertex for exploration
+3. `RULE1`: While exploring vertex, visit all its adjacent vertices and add them to queue
 4. `RULE2`: Next vertex for exploration should be chosen from **Queue**
+
+> If graph has cycles use visited array
+> In bfs we first explore all nodes at distance 0 from source then all nodes at distance 1 and so on. Thus bfs guarantees that the first path you find will be the shortest path.
 
 ### DFS
 
@@ -118,9 +138,9 @@ Dynamic programming is a technique for solving problems.
 In any dynamic programming problem, what's important is that our problem must be **breakable** into smaller subproblems and also, these subproblems show some sort of **overlap** which we can save upon by **caching** or **memoization**.
 Three steps:
 
-1.  **Recursion:** Solve with recursion
-2.  **Memoization:** Store values if too much recursion
-3.  **Bottom-up:** Remove recursion
+1. **Recursion:** Solve with recursion
+2. **Memoization:** Store values if too much recursion
+3. **Bottom-up:** Remove recursion
 
 DP -> Recursion + Memo + Guessing
 
@@ -208,9 +228,21 @@ public static int fib(int n) {
 }
 ```
 
-### DP (incomplete-notes of )
+#### Tips for converting solution from recursive to bottom-up
 
-# Dynamic Programming
+- Recursive solution uses top-down approach that is it gives solution of big problems by first solving smaller sub problems of that problem.
+- In bottom-up approach we first solve the smallest sub-problems and then get to the big problem
+- For example, lets say you want to find largest integer in an array
+  - Approach recursive: Break array into two until you are left with an array of only two values. Then return the bigger of the two values and thus solution starts to come into shape
+  - Approach bottom up: We pickup two values and get the largest of them. Then we compare their result with the next value and so on.
+- Notice both are almost identical, only difference lies in that top-down/recursive starts from big and goes to small and then back to big while as bottom-up goes from small to big.
+
+#### When is it 1D and 2D DP problem?
+
+- If only 1 index (or input) that make each your recursive call unique then it is 1D dp problem i.e in bottom-up approach you will need a 1D array (E.g fibonacci).
+- If you need two indices for the same then its 2D dp problem i.e in bottom approach you will use a 2D array. (e.g Edit Distance)
+
+## Dynamic Programming
 
 - Method that can be used to solve some problems with specific characteristics
 
@@ -269,3 +301,274 @@ f(n) = f(n-1) + n # Recurrence relation: sum of n numbers = sum of n-1 numbers +
 ## Greedy Algorithms
 
 - A greedy algorithm makes the best available choice at each step, without considering the future implications of that choice. It aims to achieve a globally optimal solution by locally optimizing at each step.
+
+## Trie
+
+- Also called re**trie**val tree, digital search tree and prefix tree. It is pronounced as **try**
+- Very efficient for searching. Time complexity is O(L) where L is len(word). However it takes a lot of memory. 26^26 is max memory it can take
+- Root is always empty. It can represent an empty string if you mark eow
+- Prefix is not repeated in this data structure i.e if apple is already added then only 's' will be added when apples is inserted
+- children.length = 26 if only small letters otherwise 52, 256 and so on depending number of allowed chars
+  - children[0] == null => a after parent is absent
+  - children[1] != null => b after parent is present
+
+> All three methods kind of are doing exactly same things. They only differ by a small code
+
+## Priority Queue
+
+- Priority Queue is an abstract data type, commonly implemented using MaxHeap or MinHeap. Simple arrays can also be used with increased cost.
+- Binary Heap Construction from an Unordered Array is O(n) and serves as the basis of heap sort.
+
+- Different implementations of Priority Queue.
+  - You can see code of each in implementations section
+
+```java
+Implementation    insert    delMax  max
+------------------------------------------
+Unordered array   O(1)      O(N)    O(N)
+Ordered array     O(N)      O(1)    O(1)
+Heap              O(logN)   O(logN) O(logN)
+```
+
+### Heap
+
+- Heap is an array visualized as a nearly complete binary tree.
+  - A heap satisfies the heap invariant: if A is a parent node of B then A is ordered with respect to B for all nodes A, B in the heap.
+  - Root is the first element (i.e., i=1).
+  - parent(i) = i/2, leftChild(i) = 2i, and rightChild(i) = 2i+1.
+  - Arrays start from index 1 for easier arithmetic.
+- MAX HEAP: Key of node >= key of children; root is the node with the highest key.
+- MIN HEAP: Key of node <= Key of children; root is the node with lowest key
+- Height of heap binary tree is bounded by log(n).
+  - So any algorithm that goes level by level will have logarithmic complexity
+- Elements [n/2 + 1 ... n] are all leaves.
+
+### Binary Heaps
+
+- Binary heaps are array representations of heap-ordered complete binary trees.
+  - Indices start at 1 for easier arithmetic.
+  - No explicit links needed; movement around the tree is through arithmetic on indices.
+
+#### Binary Heap Properties
+
+- `a[1]` is the root and largest key of the heap.
+- Parent of node at index `k` in the array is `k/2`.
+  - Thus, children of node `k` are `2k` and `2k + 1`.
+
+#### Heap Operations
+
+- **Scenario 1**: Child's key is larger than its parent's key.
+  - Use the `swim(int k)` operation to fix this violation of the heap invariant.
+    - Exchange key in child with key in parent.
+    - Repeat the same for the new parent until heap order is restored (i.e., stop when both children become smaller than the parent).
+- **Scenario 2**: Parent's key becomes smaller than one (or both) of its children's keys.
+  - Use the `sink(int k)` operation to eliminate this violation.
+    - Exchange key in parent with key in larger child.
+    - Repeat the same for the exchanged child until heap order is restored.
+- Both operations assume there is only one violation and focus on fixing that violation without recursion.
+- `insert`: Add a node at the end and then swim it up; at most 1 + log N compares.
+- `delMax`: Exchange root with the node at the end, then sink it down; at most 2logN compares.
+
+**IMPORTANT NOTE**:
+**Build you priority queue using 1-based index. At the end, replace indices in 'less' and 'exch' methods with 'index - 1' to make it 0-based index. This is especially helpful in sorting.**
+
+> P.S: You can visualize a tree from the array by listing the numbers:
+>
+> - 1st row: 1 (2^0)
+> - 2nd row: 2 and 3 (2^1)
+> - 3rd row: 4, 5, 6, and 7 (2^2)
+> - 4th row: 8, 9, 10, 11, 12, 13, and 14 (2^3)
+
+### Heap Sort
+
+- (see code)
+
+## Symbol Table
+
+- Operations
+  - insert value with a specified key
+  - given a key, search for the value
+- key and value can interchange (e.g DNS lookup: someone gets domain from ip addr and someone gets ip addr from domain)
+- equivalent to dictionary
+- Associative array abstraction: associate on value with each key
+  - i.e no duplicate keys
+  - some implementations can support multiple keys but not this
+
+> get() returns null if key not present
+> put() overwrites old value with new value
+
+---
+
+> Prefer keys immutable
+
+---
+
+> java equals req: its is an equivalence relation and no object is equal to null
+
+```java
+// general structure of equals method
+public boolean equals(Object y) {
+  if(y == this) return true; // optimization
+  if(y == null) return false; // definition
+  if(y.getClass() != this.getClass()) return false;
+  if(y.field1 != this.field1) return false;
+  if(y.field2.equals(this.field2)) return false;
+  return true;
+}
+```
+
+---
+
+> assumption: Keys are comparable for efficiency and some more oprations OR
+> Keys support equals OR
+> Keys support hashCode to scramble kye
+
+```java
+public class ST<Key, Value> {
+              ST()                     create a symbol table
+         void put(Key key, Value val)  put key-value pair into the table
+        Value get(Key key)             value paired with key (null if key is absent)
+         void delete(Key key)          remove key (and its value) from table
+      boolean contains(Key key)        is there a value paired with key?                        ...
+      boolean isEmpty()                ...
+          int size()                   ...
+Iterable<Key> keys()                    all the keys in the table
+}
+```
+
+### Elementary Implementations of symbol table
+
+#### LinkedList
+
+- DS: Maintain an (unordered) linked list of key-value pairs
+- Search: scan through all keys until find a match
+- Insert: Scan through all keys until find a match and then insert; add to front if no match
+
+#### Ordered Symbol Table
+
+- DS: Maintain an ordered array of key-value pairs
+- Search: use binary search (as keys are comparable)
+- Insert: use binary search, if not found then insert (order maintained automatically)
+
+- two arrays: keys[] and vals[] and while inserting insert both in keys and vals
+
+- `+` functions of using this implementations
+- You can implement priority queue using above api
+
+![Ordered Symbol table api](assets/ordered-symbol-table-api.png)
+![Ordered Symbol table applications](assets/ordered-symbol-table-api-application.png)
+
+### Efficient Implementations
+
+#### Binary Search Trees
+
+- DEF: A BST is a BT in symmetric order
+- It is an explicit ds (actual tree in memory and not just representaion like in heap)
+- A binary tree is either:
+  - Empty
+  - Two disjoint binary trees (left and right)
+- Every node is a root of its subtree
+- BST is special BT with 'symmetric order':
+- Symmetric order: Each node has a key, and every node's key is:
+  - Larger than all keys in its left subtree
+  - Smaller than all keys in its right subtree
+- Thus every node's value is b/w its left subtree node value and right subtree node value
+- Tree Shape depends on order of insertion
+  - came in order: linked list
+  - came randomly: balanced
+  - real world: somewhat between
+
+```java
+public class BST<Key extends Comparable<Key>, Value> {
+  private Node root;
+  private class Node {
+    private Node left, right;
+    private Key key;
+    private Value val;
+    public Node(Key key, Value val) {
+      this.key = key; this.val = val;
+    }
+  }
+
+  public void put(Key key, Value val) {}
+  public Value get(Key key) {}
+  public void delete(Key key) {}
+  public Iterable<Key> iterator() {}
+}
+
+```
+
+##### Ordered Symbol Table Opts using BST
+
+- Minimum: Smallest key in table (go as much left as you can)
+- Maximum: Largest key in table (go as much right as you can)
+- Floor: Largest key <= to a given key
+- Ceil: Smallest key >= to a given key
+
+##### Deletion cost (BST)
+
+1. tombstone: set its value to null and leave the key in tree to guide searches (but don't consider it equal in search)
+2. 2nd method
+
+   - Delete the minimum key
+     - Go left until find a node with a null left link
+     - replace the that node by its right link
+     - update subtree counts
+   - Delete the maximum key
+     - Go left until find a node with a null left link
+     - replace the that node by its right link
+     - update subtree counts
+
+3. Hibbard deletion (let t to be deleted):
+
+   - CASE 0: [0 child] set parent's link to 't' to null (update counts)
+   - CASE 1: [1 child] replace the parent's link to 't' with t's only child (update counts)
+   - CASE 2: [2 child]
+     - find successor of t, let it be x i. the minimum after t (go right and then very left) and store it before deleting it (using 1 child)
+     - replace t with x
+
+- Using 3rd method, if you delete a lot of random items, tree tends to become less balanced. Over time we get Height = sqrt(N). Thus we go from logn to sqrt(n) per operation
+
+## Merge Sort
+
+```java
+   /*
+    * Time Complexity: Theta(nlogn)
+    *
+    * It sorts 100 million integers in just 30 secs!!!
+    * */
+public void mergeSort(int[] arr) {
+    int arrLen = arr.length;
+    if(arrLen == 1)
+        return;
+
+    // leftUpperBound is not included
+    int leftUpperBound = arrLen/2;
+    // rightLowerBound is included
+    int rightLowerBound = leftUpperBound;
+
+    int[] leftHalf = Arrays.copyOfRange(arr, 0, leftUpperBound);
+    int[] rightHalf = Arrays.copyOfRange(arr, leftUpperBound, arrLen);
+
+    mergeSort(leftHalf);
+    mergeSort(rightHalf);
+
+    merge(arr, leftHalf,rightHalf);
+}
+
+public void merge(int[] mergedArr, int[] leftHalf, int[] rightHalf) {
+    int lenLeftHalf = leftHalf.length;
+     int lenRightHalf = rightHalf.length;
+    int iMergedArr = 0, iLeftHalf = 0, iRightHalf = 0;
+    while(iLeftHalf < lenLeftHalf && iRightHalf < lenRightHalf) {
+        if(leftHalf[iLeftHalf] <= rightHalf[iRightHalf]) // change <= to >= to reverse order of sorted array
+            mergedArr[iMergedArr++] = leftHalf[iLeftHalf++];
+        else
+            mergedArr[iMergedArr++] = rightHalf[iRightHalf++];
+    }
+    while(iLeftHalf < lenLeftHalf)
+        mergedArr[iMergedArr++] = leftHalf[iLeftHalf++];
+    while(iRightHalf < lenRightHalf)
+        mergedArr[iMergedArr++] = rightHalf[iRightHalf++];
+}
+```
